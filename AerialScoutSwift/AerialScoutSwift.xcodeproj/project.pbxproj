@@ -14,6 +14,10 @@
 		C421E87A1C24FE4F009DD98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */; };
 		C421E8851C24FE4F009DD98C /* AerialScoutSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E8841C24FE4F009DD98C /* AerialScoutSwiftTests.swift */; };
 		C421E8901C24FE4F009DD98C /* AerialScoutSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */; };
+		C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */; };
+		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
+		C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */; };
+		C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		C421E88B1C24FE4F009DD98C /* AerialScoutSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerialScoutSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerialScoutSwiftUITests.swift; sourceTree = "<group>"; };
 		C421E8911C24FE4F009DD98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 				C421E8761C24FE4F009DD98C /* Assets.xcassets */,
 				C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */,
 				C421E87B1C24FE4F009DD98C /* Info.plist */,
+				C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */,
+				C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */,
+				C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */,
+				C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */,
 			);
 			path = AerialScoutSwift;
 			sourceTree = "<group>";
@@ -256,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */,
+				C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */,
 				C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */,
+				C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
+				C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +498,7 @@
 				C421E8961C24FE4F009DD98C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C421E8971C24FE4F009DD98C /* Build configuration list for PBXNativeTarget "AerialScoutSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +507,7 @@
 				C421E8991C24FE4F009DD98C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C421E89A1C24FE4F009DD98C /* Build configuration list for PBXNativeTarget "AerialScoutSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +516,7 @@
 				C421E89C1C24FE4F009DD98C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
