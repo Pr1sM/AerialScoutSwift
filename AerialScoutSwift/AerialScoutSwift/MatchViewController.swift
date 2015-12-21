@@ -9,13 +9,21 @@
 import UIKit
 
 class MatchViewController : UITableViewController {
+    
+    @IBOutlet var editToolbar : UIToolbar?;
+    @IBOutlet var mainToolbar : UIToolbar?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationController?.navigationBarHidden = false
+        self.setToolbarItems(mainToolbar?.items, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: true)
+        self.changeToolbars(self.editing, animated: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -33,5 +41,15 @@ class MatchViewController : UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
+        self.changeToolbars(editing, animated: animated)
+    }
+    
+    func changeToolbars(editing: Bool, animated: Bool) {
+        self.setToolbarItems((editing ? editToolbar?.items : mainToolbar?.items), animated: animated)
     }
 }
