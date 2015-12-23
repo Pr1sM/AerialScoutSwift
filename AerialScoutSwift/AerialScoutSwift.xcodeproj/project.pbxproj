@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B13871C29ECA800C1AFE7 /* Match.swift */; };
 		C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E86F1C24FE4F009DD98C /* AppDelegate.swift */; };
 		C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E8711C24FE4F009DD98C /* ViewController.swift */; };
 		C421E8751C24FE4F009DD98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C421E8731C24FE4F009DD98C /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C41B13871C29ECA800C1AFE7 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C421E86C1C24FE4F009DD98C /* AerialScoutSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerialScoutSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C421E86F1C24FE4F009DD98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C421E8711C24FE4F009DD98C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C41B13861C29EC8700C1AFE7 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				C41B13871C29ECA800C1AFE7 /* Match.swift */,
+			);
+			name = Match;
+			sourceTree = "<group>";
+		};
 		C421E8631C24FE4F009DD98C = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		C421E86E1C24FE4F009DD98C /* AerialScoutSwift */ = {
 			isa = PBXGroup;
 			children = (
+				C41B13861C29EC8700C1AFE7 /* Match */,
 				C421E86F1C24FE4F009DD98C /* AppDelegate.swift */,
 				C421E8711C24FE4F009DD98C /* ViewController.swift */,
 				C421E8731C24FE4F009DD98C /* Main.storyboard */,
@@ -274,6 +285,7 @@
 				C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */,
 				C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */,
 				C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */,
+				C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */,
 				C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */,
 				C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
