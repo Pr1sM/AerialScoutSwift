@@ -15,6 +15,7 @@
 		C421E87A1C24FE4F009DD98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */; };
 		C421E8851C24FE4F009DD98C /* AerialScoutSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E8841C24FE4F009DD98C /* AerialScoutSwiftTests.swift */; };
 		C421E8901C24FE4F009DD98C /* AerialScoutSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */; };
+		C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44985A91C2CE1D80014DD57 /* MatchStore.swift */; };
 		C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */; };
 		C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */; };
 		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
@@ -54,6 +55,7 @@
 		C421E88B1C24FE4F009DD98C /* AerialScoutSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerialScoutSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerialScoutSwiftUITests.swift; sourceTree = "<group>"; };
 		C421E8911C24FE4F009DD98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C44985A91C2CE1D80014DD57 /* MatchStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStore.swift; sourceTree = "<group>"; };
 		C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
 		C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				C41B13871C29ECA800C1AFE7 /* Match.swift */,
+				C44985A91C2CE1D80014DD57 /* MatchStore.swift */,
 			);
 			name = Match;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
 				C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */,
+				C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
