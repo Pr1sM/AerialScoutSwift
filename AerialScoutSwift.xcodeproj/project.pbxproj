@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFCC366C55CD616C8C72A301 /* Pods_AerialScoutSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99AE6FCF94DECCB578DD2BEE /* Pods_AerialScoutSwift.framework */; };
 		C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B13871C29ECA800C1AFE7 /* Match.swift */; };
 		C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E86F1C24FE4F009DD98C /* AppDelegate.swift */; };
 		C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E8711C24FE4F009DD98C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		C421E8851C24FE4F009DD98C /* AerialScoutSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E8841C24FE4F009DD98C /* AerialScoutSwiftTests.swift */; };
 		C421E8901C24FE4F009DD98C /* AerialScoutSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */; };
 		C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44985A91C2CE1D80014DD57 /* MatchStore.swift */; };
+		C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF68B1C2E1B3B00125506 /* TitleView.swift */; };
 		C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */; };
 		C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */; };
 		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		264040EB64F0B1FE442581A9 /* Pods-AerialScoutSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		99AE6FCF94DECCB578DD2BEE /* Pods_AerialScoutSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AerialScoutSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC298E349A83BB0349B9B83D /* Pods-AerialScoutSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift.release.xcconfig"; sourceTree = "<group>"; };
 		C41B13871C29ECA800C1AFE7 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C421E86C1C24FE4F009DD98C /* AerialScoutSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerialScoutSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C421E86F1C24FE4F009DD98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerialScoutSwiftUITests.swift; sourceTree = "<group>"; };
 		C421E8911C24FE4F009DD98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C44985A91C2CE1D80014DD57 /* MatchStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStore.swift; sourceTree = "<group>"; };
+		C45BF68B1C2E1B3B00125506 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
 		C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCC366C55CD616C8C72A301 /* Pods_AerialScoutSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		749B46670E78F84C79ED1D41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99AE6FCF94DECCB578DD2BEE /* Pods_AerialScoutSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9020CF56B039D7953B03EA68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				264040EB64F0B1FE442581A9 /* Pods-AerialScoutSwift.debug.xcconfig */,
+				BC298E349A83BB0349B9B83D /* Pods-AerialScoutSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C41B13861C29EC8700C1AFE7 /* Match */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +128,8 @@
 				C421E8831C24FE4F009DD98C /* AerialScoutSwiftTests */,
 				C421E88E1C24FE4F009DD98C /* AerialScoutSwiftUITests */,
 				C421E86D1C24FE4F009DD98C /* Products */,
+				9020CF56B039D7953B03EA68 /* Pods */,
+				749B46670E78F84C79ED1D41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +150,7 @@
 				C421E86F1C24FE4F009DD98C /* AppDelegate.swift */,
 				C421E8711C24FE4F009DD98C /* ViewController.swift */,
 				C421E8731C24FE4F009DD98C /* Main.storyboard */,
+				C45BF68B1C2E1B3B00125506 /* TitleView.swift */,
 				C421E8761C24FE4F009DD98C /* Assets.xcassets */,
 				C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */,
 				C421E87B1C24FE4F009DD98C /* Info.plist */,
@@ -161,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C421E8941C24FE4F009DD98C /* Build configuration list for PBXNativeTarget "AerialScoutSwift" */;
 			buildPhases = (
+				126B5F02C8F3B74AD873489E /* Check Pods Manifest.lock */,
 				C421E8681C24FE4F009DD98C /* Sources */,
 				C421E8691C24FE4F009DD98C /* Frameworks */,
 				C421E86A1C24FE4F009DD98C /* Resources */,
+				6E408162C9B3EE5272E55073 /* Embed Pods Frameworks */,
+				1C8E712B9BA5611D78DB12FB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,6 +310,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		126B5F02C8F3B74AD873489E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1C8E712B9BA5611D78DB12FB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E408162C9B3EE5272E55073 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C421E8681C24FE4F009DD98C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -294,6 +372,7 @@
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
 				C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */,
 				C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */,
+				C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +510,7 @@
 		};
 		C421E8951C24FE4F009DD98C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 264040EB64F0B1FE442581A9 /* Pods-AerialScoutSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AerialScoutSwift/Info.plist;
@@ -442,6 +522,7 @@
 		};
 		C421E8961C24FE4F009DD98C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC298E349A83BB0349B9B83D /* Pods-AerialScoutSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AerialScoutSwift/Info.plist;

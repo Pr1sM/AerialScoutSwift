@@ -10,14 +10,26 @@ import UIKit
 
 class MatchViewController : UITableViewController {
     
-    @IBOutlet var editToolbar : UIToolbar?;
-    @IBOutlet var mainToolbar : UIToolbar?;
+    @IBOutlet var editToolbar : UIToolbar?
+    @IBOutlet var mainToolbar : UIToolbar?
+    
+    private var titleView:TitleView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         self.navigationController?.navigationBarHidden = false
         self.setToolbarItems(mainToolbar?.items, animated: true)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        titleView = storyboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
+        titleView?.matchLabel?.text = ""
+        titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
+        self.navigationController?.navigationBar.addSubview((titleView?.view)!)
+        self.navigationItem.title = ""
+        titleView?.view.center.x = (self.navigationController?.navigationBar.center.x)!
+        self.navigationController?.toolbar.barTintColor = UIColor.orangeColor()
+        print(titleView?.view.center)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,5 +63,18 @@ class MatchViewController : UITableViewController {
     
     func changeToolbars(editing: Bool, animated: Bool) {
         self.setToolbarItems((editing ? editToolbar?.items : mainToolbar?.items), animated: animated)
+        titleView?.matchLabel?.text = (editing) ? "Edit List" : "Scouting List"
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Matches"
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (MatchStore.sharedStore.allMatches?.count)!
     }
 }
