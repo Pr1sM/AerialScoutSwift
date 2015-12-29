@@ -20,16 +20,16 @@ class MatchViewController : UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         self.navigationController?.navigationBarHidden = false
         self.setToolbarItems(mainToolbar?.items, animated: true)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         titleView = storyboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
         self.navigationController?.navigationBar.addSubview((titleView?.view)!)
-        self.navigationItem.title = ""
+        self.navigationItem.title = "Scouting List"
+        self.navigationItem.titleView = UIView(frame: CGRectZero)
         titleView?.view.center.x = (self.navigationController?.navigationBar.center.x)!
         self.navigationController?.toolbar.barTintColor = UIColor.orangeColor()
-        print(titleView?.view.center)
+        //print(titleView?.view.center)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -58,6 +58,7 @@ class MatchViewController : UITableViewController {
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         self.tableView.setEditing(editing, animated: animated)
+        self.navigationItem.rightBarButtonItem?.enabled = !editing
         self.changeToolbars(editing, animated: animated)
     }
     

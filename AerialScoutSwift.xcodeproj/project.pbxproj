@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B861F5CF74AA6B56821A970 /* Pods_AerialScoutSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8658AA528EEBC7B02267BACE /* Pods_AerialScoutSwiftUITests.framework */; };
 		AFCC366C55CD616C8C72A301 /* Pods_AerialScoutSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99AE6FCF94DECCB578DD2BEE /* Pods_AerialScoutSwift.framework */; };
 		C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B13871C29ECA800C1AFE7 /* Match.swift */; };
 		C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E86F1C24FE4F009DD98C /* AppDelegate.swift */; };
@@ -16,6 +17,24 @@
 		C421E87A1C24FE4F009DD98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */; };
 		C421E8851C24FE4F009DD98C /* AerialScoutSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E8841C24FE4F009DD98C /* AerialScoutSwiftTests.swift */; };
 		C421E8901C24FE4F009DD98C /* AerialScoutSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */; };
+		C42E99521C30C832009A08DC /* FileUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99511C30C832009A08DC /* FileUpload.swift */; };
+		C42E99541C312538009A08DC /* MatchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99531C312538009A08DC /* MatchViewCell.swift */; };
+		C42E995E1C31CC51009A08DC /* orangeFlag.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99561C31CC51009A08DC /* orangeFlag.png */; };
+		C42E995F1C31CC51009A08DC /* black-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99571C31CC51009A08DC /* black-checkmark.png */; };
+		C42E99601C31CC51009A08DC /* red3Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99581C31CC51009A08DC /* red3Assist.png */; };
+		C42E99611C31CC51009A08DC /* red2Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99591C31CC51009A08DC /* red2Assist.png */; };
+		C42E99621C31CC51009A08DC /* red1Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995A1C31CC51009A08DC /* red1Assist.png */; };
+		C42E99631C31CC51009A08DC /* blue3Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995B1C31CC51009A08DC /* blue3Assist.png */; };
+		C42E99641C31CC51009A08DC /* blue2Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995C1C31CC51009A08DC /* blue2Assist.png */; };
+		C42E99651C31CC51009A08DC /* blue1Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995D1C31CC51009A08DC /* blue1Assist.png */; };
+		C42E99671C31CC64009A08DC /* Aerial About Page.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99661C31CC64009A08DC /* Aerial About Page.png */; };
+		C42E99691C31E849009A08DC /* ScoutContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99681C31E849009A08DC /* ScoutContainerViewController.swift */; };
+		C42E996B1C31F47E009A08DC /* TeamMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E996A1C31F47E009A08DC /* TeamMatchViewController.swift */; };
+		C42E996E1C31F4B5009A08DC /* AutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E996D1C31F4B5009A08DC /* AutoViewController.swift */; };
+		C42E99701C31F504009A08DC /* TeleopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E996F1C31F504009A08DC /* TeleopViewController.swift */; };
+		C42E99721C31F522009A08DC /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99711C31F522009A08DC /* ScoreViewController.swift */; };
+		C42E99741C31F530009A08DC /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99731C31F530009A08DC /* FinalViewController.swift */; };
+		C42E99761C31F5CE009A08DC /* MatchSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99751C31F5CE009A08DC /* MatchSummaryViewController.swift */; };
 		C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44985A91C2CE1D80014DD57 /* MatchStore.swift */; };
 		C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF68B1C2E1B3B00125506 /* TitleView.swift */; };
 		C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */; };
@@ -23,6 +42,7 @@
 		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
 		C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */; };
 		C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */; };
+		E3599186AB697779FF8BC079 /* Pods_AerialScoutSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34119566D3961EA16E10EDF /* Pods_AerialScoutSwiftTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +64,11 @@
 
 /* Begin PBXFileReference section */
 		264040EB64F0B1FE442581A9 /* Pods-AerialScoutSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		2A9A7F69306D0410DACBBEC0 /* Pods-AerialScoutSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftTests/Pods-AerialScoutSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8658AA528EEBC7B02267BACE /* Pods_AerialScoutSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AerialScoutSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99AE6FCF94DECCB578DD2BEE /* Pods_AerialScoutSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AerialScoutSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1EACAB5A10FE133C10CBA4F /* Pods-AerialScoutSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftUITests/Pods-AerialScoutSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A34119566D3961EA16E10EDF /* Pods_AerialScoutSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AerialScoutSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC298E349A83BB0349B9B83D /* Pods-AerialScoutSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift.release.xcconfig"; sourceTree = "<group>"; };
 		C41B13871C29ECA800C1AFE7 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C421E86C1C24FE4F009DD98C /* AerialScoutSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerialScoutSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +84,24 @@
 		C421E88B1C24FE4F009DD98C /* AerialScoutSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerialScoutSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerialScoutSwiftUITests.swift; sourceTree = "<group>"; };
 		C421E8911C24FE4F009DD98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C42E99511C30C832009A08DC /* FileUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUpload.swift; sourceTree = "<group>"; };
+		C42E99531C312538009A08DC /* MatchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewCell.swift; sourceTree = "<group>"; };
+		C42E99561C31CC51009A08DC /* orangeFlag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeFlag.png; sourceTree = "<group>"; };
+		C42E99571C31CC51009A08DC /* black-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-checkmark.png"; sourceTree = "<group>"; };
+		C42E99581C31CC51009A08DC /* red3Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red3Assist.png; sourceTree = "<group>"; };
+		C42E99591C31CC51009A08DC /* red2Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red2Assist.png; sourceTree = "<group>"; };
+		C42E995A1C31CC51009A08DC /* red1Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red1Assist.png; sourceTree = "<group>"; };
+		C42E995B1C31CC51009A08DC /* blue3Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue3Assist.png; sourceTree = "<group>"; };
+		C42E995C1C31CC51009A08DC /* blue2Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue2Assist.png; sourceTree = "<group>"; };
+		C42E995D1C31CC51009A08DC /* blue1Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue1Assist.png; sourceTree = "<group>"; };
+		C42E99661C31CC64009A08DC /* Aerial About Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aerial About Page.png"; sourceTree = "<group>"; };
+		C42E99681C31E849009A08DC /* ScoutContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutContainerViewController.swift; sourceTree = "<group>"; };
+		C42E996A1C31F47E009A08DC /* TeamMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMatchViewController.swift; sourceTree = "<group>"; };
+		C42E996D1C31F4B5009A08DC /* AutoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoViewController.swift; sourceTree = "<group>"; };
+		C42E996F1C31F504009A08DC /* TeleopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleopViewController.swift; sourceTree = "<group>"; };
+		C42E99711C31F522009A08DC /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		C42E99731C31F530009A08DC /* FinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		C42E99751C31F5CE009A08DC /* MatchSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSummaryViewController.swift; sourceTree = "<group>"; };
 		C44985A91C2CE1D80014DD57 /* MatchStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStore.swift; sourceTree = "<group>"; };
 		C45BF68B1C2E1B3B00125506 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +109,8 @@
 		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchViewController.swift; sourceTree = "<group>"; };
+		CA9666B2335967D1088F3CB0 /* Pods-AerialScoutSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftUITests/Pods-AerialScoutSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6E7DEF9EE42D908885F3846 /* Pods-AerialScoutSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftTests/Pods-AerialScoutSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3599186AB697779FF8BC079 /* Pods_AerialScoutSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B861F5CF74AA6B56821A970 /* Pods_AerialScoutSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				99AE6FCF94DECCB578DD2BEE /* Pods_AerialScoutSwift.framework */,
+				A34119566D3961EA16E10EDF /* Pods_AerialScoutSwiftTests.framework */,
+				8658AA528EEBC7B02267BACE /* Pods_AerialScoutSwiftUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,6 +156,10 @@
 			children = (
 				264040EB64F0B1FE442581A9 /* Pods-AerialScoutSwift.debug.xcconfig */,
 				BC298E349A83BB0349B9B83D /* Pods-AerialScoutSwift.release.xcconfig */,
+				2A9A7F69306D0410DACBBEC0 /* Pods-AerialScoutSwiftTests.debug.xcconfig */,
+				E6E7DEF9EE42D908885F3846 /* Pods-AerialScoutSwiftTests.release.xcconfig */,
+				CA9666B2335967D1088F3CB0 /* Pods-AerialScoutSwiftUITests.debug.xcconfig */,
+				A1EACAB5A10FE133C10CBA4F /* Pods-AerialScoutSwiftUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -146,11 +198,13 @@
 		C421E86E1C24FE4F009DD98C /* AerialScoutSwift */ = {
 			isa = PBXGroup;
 			children = (
+				C42E99551C31CBEE009A08DC /* Assets */,
 				C41B13861C29EC8700C1AFE7 /* Match */,
+				C42E996C1C31F48A009A08DC /* ScoutDataViews */,
+				C42E99501C30C7FB009A08DC /* Support */,
 				C421E86F1C24FE4F009DD98C /* AppDelegate.swift */,
 				C421E8711C24FE4F009DD98C /* ViewController.swift */,
 				C421E8731C24FE4F009DD98C /* Main.storyboard */,
-				C45BF68B1C2E1B3B00125506 /* TitleView.swift */,
 				C421E8761C24FE4F009DD98C /* Assets.xcassets */,
 				C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */,
 				C421E87B1C24FE4F009DD98C /* Info.plist */,
@@ -181,6 +235,46 @@
 			path = AerialScoutSwiftUITests;
 			sourceTree = "<group>";
 		};
+		C42E99501C30C7FB009A08DC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C45BF68B1C2E1B3B00125506 /* TitleView.swift */,
+				C42E99511C30C832009A08DC /* FileUpload.swift */,
+				C42E99531C312538009A08DC /* MatchViewCell.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		C42E99551C31CBEE009A08DC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C42E99661C31CC64009A08DC /* Aerial About Page.png */,
+				C42E99561C31CC51009A08DC /* orangeFlag.png */,
+				C42E99571C31CC51009A08DC /* black-checkmark.png */,
+				C42E99581C31CC51009A08DC /* red3Assist.png */,
+				C42E99591C31CC51009A08DC /* red2Assist.png */,
+				C42E995A1C31CC51009A08DC /* red1Assist.png */,
+				C42E995B1C31CC51009A08DC /* blue3Assist.png */,
+				C42E995C1C31CC51009A08DC /* blue2Assist.png */,
+				C42E995D1C31CC51009A08DC /* blue1Assist.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		C42E996C1C31F48A009A08DC /* ScoutDataViews */ = {
+			isa = PBXGroup;
+			children = (
+				C42E99681C31E849009A08DC /* ScoutContainerViewController.swift */,
+				C42E996A1C31F47E009A08DC /* TeamMatchViewController.swift */,
+				C42E996D1C31F4B5009A08DC /* AutoViewController.swift */,
+				C42E996F1C31F504009A08DC /* TeleopViewController.swift */,
+				C42E99711C31F522009A08DC /* ScoreViewController.swift */,
+				C42E99731C31F530009A08DC /* FinalViewController.swift */,
+				C42E99751C31F5CE009A08DC /* MatchSummaryViewController.swift */,
+			);
+			name = ScoutDataViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,9 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C421E8971C24FE4F009DD98C /* Build configuration list for PBXNativeTarget "AerialScoutSwiftTests" */;
 			buildPhases = (
+				A7791DF19B630AA4B1A1E44F /* Check Pods Manifest.lock */,
 				C421E87C1C24FE4F009DD98C /* Sources */,
 				C421E87D1C24FE4F009DD98C /* Frameworks */,
 				C421E87E1C24FE4F009DD98C /* Resources */,
+				DF4ECFC6B91646ABCA0FB867 /* Embed Pods Frameworks */,
+				37C4609F35E5F86003BE1B79 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,9 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C421E89A1C24FE4F009DD98C /* Build configuration list for PBXNativeTarget "AerialScoutSwiftUITests" */;
 			buildPhases = (
+				CB7F671253EE31762EFD0E49 /* Check Pods Manifest.lock */,
 				C421E8871C24FE4F009DD98C /* Sources */,
 				C421E8881C24FE4F009DD98C /* Frameworks */,
 				C421E8891C24FE4F009DD98C /* Resources */,
+				A172A9F2EEBB4FEC1F21B24E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,8 +388,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C421E87A1C24FE4F009DD98C /* LaunchScreen.storyboard in Resources */,
+				C42E99631C31CC51009A08DC /* blue3Assist.png in Resources */,
+				C42E99611C31CC51009A08DC /* red2Assist.png in Resources */,
 				C421E8771C24FE4F009DD98C /* Assets.xcassets in Resources */,
 				C421E8751C24FE4F009DD98C /* Main.storyboard in Resources */,
+				C42E99621C31CC51009A08DC /* red1Assist.png in Resources */,
+				C42E995E1C31CC51009A08DC /* orangeFlag.png in Resources */,
+				C42E99601C31CC51009A08DC /* red3Assist.png in Resources */,
+				C42E995F1C31CC51009A08DC /* black-checkmark.png in Resources */,
+				C42E99641C31CC51009A08DC /* blue2Assist.png in Resources */,
+				C42E99671C31CC64009A08DC /* Aerial About Page.png in Resources */,
+				C42E99651C31CC51009A08DC /* blue1Assist.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +449,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		37C4609F35E5F86003BE1B79 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwiftTests/Pods-AerialScoutSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6E408162C9B3EE5272E55073 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +479,66 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwift/Pods-AerialScoutSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A172A9F2EEBB4FEC1F21B24E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwiftUITests/Pods-AerialScoutSwiftUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7791DF19B630AA4B1A1E44F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB7F671253EE31762EFD0E49 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF4ECFC6B91646ABCA0FB867 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AerialScoutSwiftTests/Pods-AerialScoutSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -364,14 +547,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */,
+				C42E99741C31F530009A08DC /* FinalViewController.swift in Sources */,
 				C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */,
+				C42E99541C312538009A08DC /* MatchViewCell.swift in Sources */,
 				C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */,
+				C42E99691C31E849009A08DC /* ScoutContainerViewController.swift in Sources */,
 				C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */,
 				C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */,
+				C42E99521C30C832009A08DC /* FileUpload.swift in Sources */,
 				C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */,
+				C42E996B1C31F47E009A08DC /* TeamMatchViewController.swift in Sources */,
+				C42E996E1C31F4B5009A08DC /* AutoViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
 				C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */,
+				C42E99721C31F522009A08DC /* ScoreViewController.swift in Sources */,
+				C42E99701C31F504009A08DC /* TeleopViewController.swift in Sources */,
 				C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */,
+				C42E99761C31F5CE009A08DC /* MatchSummaryViewController.swift in Sources */,
 				C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +726,7 @@
 		};
 		C421E8981C24FE4F009DD98C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A9A7F69306D0410DACBBEC0 /* Pods-AerialScoutSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AerialScoutSwiftTests/Info.plist;
@@ -546,6 +739,7 @@
 		};
 		C421E8991C24FE4F009DD98C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6E7DEF9EE42D908885F3846 /* Pods-AerialScoutSwiftTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AerialScoutSwiftTests/Info.plist;
@@ -558,6 +752,7 @@
 		};
 		C421E89B1C24FE4F009DD98C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA9666B2335967D1088F3CB0 /* Pods-AerialScoutSwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AerialScoutSwiftUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -570,6 +765,7 @@
 		};
 		C421E89C1C24FE4F009DD98C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1EACAB5A10FE133C10CBA4F /* Pods-AerialScoutSwiftUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AerialScoutSwiftUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
