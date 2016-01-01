@@ -12,12 +12,12 @@
             <objects>
                 <tableViewController title="Match View Controller" id="WN8-OP-myY" customClass="MatchViewController" customModule="AerialScoutSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="28" id="m4F-Vz-ldc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MatchViewCell" rowHeight="41" id="odA-in-It5" customClass="MatchViewCell" customModule="AerialScoutSwift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="41"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="odA-in-It5" id="Abs-mV-JGt">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="40.5"/>
@@ -103,7 +103,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hnD-ya-4eC">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="bSX-b8-3ct" kind="show" id="IPV-bh-4DW"/>
+                                <segue destination="ou9-1T-88L" kind="show" id="r2D-He-JCP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -163,7 +163,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5at-Kx-h7S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2d3-VI-Gvf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -183,6 +183,14 @@
                     <view key="view" contentMode="scaleToFill" id="PPK-Ov-tlB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teleop View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzi-RF-n35">
+                                <rect key="frame" x="166" y="254" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
@@ -201,6 +209,14 @@
                     <view key="view" contentMode="scaleToFill" id="iuJ-aJ-afJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qh-Pf-Hdp">
+                                <rect key="frame" x="342" y="207" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
@@ -426,27 +442,6 @@
             </objects>
             <point key="canvasLocation" x="1372" y="1715"/>
         </scene>
-        <!--Scout Container View Controller-->
-        <scene sceneID="P26-4U-Mar">
-            <objects>
-                <viewController id="bSX-b8-3ct" customClass="ScoutContainerViewController" customModule="AerialScoutSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kV5-CS-g1M"/>
-                        <viewControllerLayoutGuide type="bottom" id="YFc-m2-Ok6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ll5-IZ-0Xu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="contentView" destination="ll5-IZ-0Xu" id="y15-eN-lpC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eRc-pQ-XHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1706" y="-453"/>
-        </scene>
         <!--TitleView-->
         <scene sceneID="ksY-Oo-KNC">
             <objects>
@@ -504,9 +499,9 @@
         <scene sceneID="XGu-vw-p6X">
             <objects>
                 <navigationController storyboardIdentifier="MainNavController" title="Main Nav Controller" toolbarHidden="NO" id="j8m-0W-nkS" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1gJ-7o-5tG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1gJ-7o-5tG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -546,15 +541,37 @@
         <scene sceneID="ZcW-67-uNi">
             <objects>
                 <viewController storyboardIdentifier="TeamMatchViewController" id="skd-hR-9cF" customClass="TeamMatchViewController" customModule="AerialScoutSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mWh-zp-CMj"/>
+                        <viewControllerLayoutGuide type="bottom" id="VXE-B0-dUn"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DDt-lE-V5C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Match View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pds-Nr-KRb">
+                                <rect key="frame" x="208" y="226" width="186" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="InT-LL-0ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-1178"/>
+            <point key="canvasLocation" x="1706" y="-1124"/>
+        </scene>
+        <!--Scout Container View Controller-->
+        <scene sceneID="yfU-PQ-NcM">
+            <objects>
+                <pageViewController storyboardIdentifier="ScoutContainerViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ou9-1T-88L" customClass="ScoutContainerViewController" customModule="AerialScoutSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgD-ia-dzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="-453"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="eef-BK-cc2">
@@ -567,6 +584,14 @@
                     <view key="view" contentMode="scaleToFill" id="9QC-1d-90w">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMy-IJ-TYN">
+                                <rect key="frame" x="146" y="194" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
@@ -585,6 +610,14 @@
                     <view key="view" contentMode="scaleToFill" id="4fD-mM-7R5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kn-XN-qg1">
+                                <rect key="frame" x="204" y="189" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>

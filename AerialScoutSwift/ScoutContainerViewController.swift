@@ -8,10 +8,7 @@
 
 import UIKit
 
-class ScoutContainerViewController: UIViewController {
-    
-    // Parent's Content View that children's view will inhabit
-    @IBOutlet var contentView:UIView?
+class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     // Controls for switching child views
     var viewButtons:UISegmentedControl?
@@ -24,22 +21,12 @@ class ScoutContainerViewController: UIViewController {
     private var finalView:FinalViewController?
     private var scoutDataViews:[UIViewController?]? = nil
     
-    // Frames for child view animation changes
-    private var leftViewFrame:CGRect = CGRectZero
-    private var rightViewFrame:CGRect = CGRectZero
-    
     // Reference of the Active Child View Controller and index within array
-    private var activeViewController:UIViewController?
+    private var activeViewController:UIViewController? = nil
     private var lastActiveViewIdx = 0
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.activeViewController = nil
-    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.activeViewController = nil
     }
     
     override func viewDidLoad() {
@@ -62,15 +49,16 @@ class ScoutContainerViewController: UIViewController {
         finalView = self.storyboard?.instantiateViewControllerWithIdentifier("FinalViewController") as? FinalViewController
         scoutDataViews = [(teamMatchView)!, (autoView)!, (scoreView)!, (teleopView)!, (finalView)!]
         
-        // Setup left and right frames for animation
-        leftViewFrame = CGRectMake((contentView?.frame.origin.x)! - (contentView?.frame.width)!, (contentView?.frame.origin.y)!, (contentView?.frame.width)!, (contentView?.frame.height)!)
-        rightViewFrame = CGRectMake((contentView?.frame.origin.x)! + (contentView?.frame.width)!, (contentView?.frame.origin.y)!, (contentView?.frame.width)!, (contentView?.frame.height)!)
-        
-        // Setup first child view
+        // Setup first child view -- Will change to make dynamic
         activeViewController = teamMatchView
         viewButtons?.selectedSegmentIndex = 0
-        displayContentController(activeViewController!)
+        
         self.navigationController?.toolbarHidden = false
+        
+        self.dataSource = self
+        self.delegate = self
+        self.setViewControllers([teamMatchView!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,61 +70,56 @@ class ScoutContainerViewController: UIViewController {
     }
     
     func viewChange(control:UISegmentedControl) {
+        //if(lastActiveViewIdx == control.selectedSegmentIndex) {return}
+        lastActiveViewIdx = self.indexOfViewController(self.viewControllers![0])
         activeViewController = scoutDataViews![control.selectedSegmentIndex]
-        self.cycleFromViewControllerIdx(lastActiveViewIdx, toNewViewControllerIdx: control.selectedSegmentIndex)
-        lastActiveViewIdx = control.selectedSegmentIndex
-        
+        let direction = (lastActiveViewIdx < control.selectedSegmentIndex) ? UIPageViewControllerNavigationDirection.Forward : UIPageViewControllerNavigationDirection.Reverse
+        self.setViewControllers([activeViewController!], direction: direction, animated: true, completion: nil)
     }
     
-    func displayContentController(content:UIViewController) {
-        self.addChildViewController(content)
-        content.view.frame = (contentView?.frame)!
-        self.view.addSubview(content.view)
-        content.didMoveToParentViewController(self)
+    // UIPageViewControllerDelegate
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        //print("didFinishAnimating: \(finished), PreviousViewController: \(previousViewControllers[0]), Transition Completed: \(completed)")
+        if(completed) {
+            lastActiveViewIdx = (viewButtons?.selectedSegmentIndex)!
+            viewButtons?.selectedSegmentIndex = self.indexOfViewController(self.viewControllers![0])
+        }
     }
     
-    func hideContentController(content:UIViewController) {
-        content.willMoveToParentViewController(nil)
-        content.view.removeFromSuperview()
-        content.removeFromParentViewController()
+    
+    // UIPageViewControllerDataSource
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        if (viewController === autoView) {
+            return teamMatchView
+        } else if (viewController === scoreView) {
+            return autoView
+        } else if (viewController === teleopView) {
+            return scoreView
+        } else if (viewController === finalView) {
+            return teleopView
+        }
+        return nil
     }
     
-    func cycleFromViewController(oldVC:UIViewController, toNewViewController newVC:UIViewController) {
-        oldVC.willMoveToParentViewController(nil)
-        self.addChildViewController(newVC)
-        
-        newVC.view.frame = self.leftViewFrame
-        let CGRectEndFrame = self.rightViewFrame
-        
-        self.transitionFromViewController(oldVC, toViewController: newVC, duration: 0.25, options: UIViewAnimationOptions.TransitionNone, animations: {() in
-                newVC.view.frame = oldVC.view.frame
-                oldVC.view.frame = CGRectEndFrame
-            }, completion: {(finished:Bool) in
-                oldVC.removeFromParentViewController()
-                newVC.didMoveToParentViewController(self)
-            })
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        if (viewController === teamMatchView) {
+            return autoView
+        } else if (viewController === autoView) {
+            return scoreView
+        } else if (viewController === scoreView) {
+            return teleopView
+        } else if (viewController === teleopView) {
+            return finalView
+        }
+        return nil
     }
     
-    func cycleFromViewControllerIdx(oldVCIdx:Int, toNewViewControllerIdx newVCIdx:Int) {
-        if (oldVCIdx == newVCIdx) {return}
-        
-        let oldVC:UIViewController = scoutDataViews![oldVCIdx]!
-        let newVC:UIViewController = scoutDataViews![newVCIdx]!
-        
-        oldVC.willMoveToParentViewController(nil)
-        self.addChildViewController(newVC)
-        
-        let CGRectStartFrame = (newVCIdx < oldVCIdx) ? leftViewFrame : rightViewFrame
-        let CGRectEndFrame = (newVCIdx < oldVCIdx) ? rightViewFrame : leftViewFrame
-        newVC.view.frame = CGRectStartFrame
-        
-        
-        self.transitionFromViewController(oldVC, toViewController: newVC, duration: 0.25, options: UIViewAnimationOptions.CurveEaseIn, animations: {() in
-            newVC.view.frame = oldVC.view.frame
-            oldVC.view.frame = CGRectEndFrame
-            }, completion: {(finished:Bool) in
-                oldVC.removeFromParentViewController()
-                newVC.didMoveToParentViewController(self)
-        })
+    func indexOfViewController(vc:UIViewController) -> Int {
+        return (vc === teamMatchView) ? 0 :
+               (vc === autoView)      ? 1 :
+               (vc === scoreView)     ? 2 :
+               (vc === teleopView)    ? 3 :
+               (vc === finalView)     ? 4 : -1
     }
 }

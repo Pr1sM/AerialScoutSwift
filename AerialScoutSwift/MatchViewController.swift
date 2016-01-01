@@ -25,10 +25,11 @@ class MatchViewController : UITableViewController {
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
         self.navigationController?.navigationBar.addSubview((titleView?.view)!)
-        self.navigationItem.title = "Scouting List"
+        //self.navigationItem.title = "Scouting List"
         self.navigationItem.titleView = UIView(frame: CGRectZero)
         titleView?.view.center.x = (self.navigationController?.navigationBar.center.x)!
         self.navigationController?.toolbar.barTintColor = UIColor.orangeColor()
+        self.hidesBottomBarWhenPushed = false
         //print(titleView?.view.center)
     }
     
