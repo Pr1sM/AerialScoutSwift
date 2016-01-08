@@ -13,6 +13,8 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     // Controls for switching child views
     var viewButtons:UISegmentedControl?
     
+    var sourceNavigationController:UINavigationController? = nil
+    
     // Child View References -- (May not be necessary?)
     private var teamMatchView:TeamMatchViewController?
     private var autoView:AutoViewController?
@@ -24,6 +26,9 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     // Reference of the Active Child View Controller and index within array
     private var activeViewController:UIViewController? = nil
     private var lastActiveViewIdx = 0
+    
+    // TitleView
+    var titleView:TitleView?
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,20 +45,33 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         viewButtons?.frame = CGRectMake(0, 0, self.view.frame.width - 30, 30)
         let viewItem = UIBarButtonItem(customView: viewButtons!)
         self.toolbarItems = [viewItem]
+        self.navigationController?.toolbar.tintColor = UIColor.whiteColor()
+        self.navigationController?.toolbar.barTintColor = UIColor.orangeColor()
         
         // Setup child view controllers
-        teamMatchView = self.storyboard?.instantiateViewControllerWithIdentifier("TeamMatchViewController") as? TeamMatchViewController
-        autoView = self.storyboard?.instantiateViewControllerWithIdentifier("AutoViewController") as? AutoViewController
-        scoreView = self.storyboard?.instantiateViewControllerWithIdentifier("ScoreViewController") as? ScoreViewController
-        teleopView = self.storyboard?.instantiateViewControllerWithIdentifier("TeleopViewController") as? TeleopViewController
-        finalView = self.storyboard?.instantiateViewControllerWithIdentifier("FinalViewController") as? FinalViewController
+        let storyboard = UIStoryboard(name: "ScoutDataViews", bundle: nil)
+        teamMatchView = storyboard.instantiateViewControllerWithIdentifier("TeamMatchViewController") as? TeamMatchViewController
+        autoView = storyboard.instantiateViewControllerWithIdentifier("AutoViewController") as? AutoViewController
+        scoreView = storyboard.instantiateViewControllerWithIdentifier("ScoreViewController") as? ScoreViewController
+        teleopView = storyboard.instantiateViewControllerWithIdentifier("TeleopViewController") as? TeleopViewController
+        finalView = storyboard.instantiateViewControllerWithIdentifier("FinalViewController") as? FinalViewController
         scoutDataViews = [(teamMatchView)!, (autoView)!, (scoreView)!, (teleopView)!, (finalView)!]
         
         // Setup first child view -- Will change to make dynamic
         activeViewController = teamMatchView
         viewButtons?.selectedSegmentIndex = 0
         
+        // Setup Title View
+        titleView = self.storyboard!.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
+        titleView?.matchLabel?.text = ""
+        titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
+        self.navigationController?.navigationBar.addSubview((titleView?.view)!)
+        self.navigationItem.title = "New Match"
+        self.navigationItem.titleView = UIView(frame: CGRectZero)
+        titleView?.view.center.x = (self.navigationController?.navigationBar.center.x)!
+        
         self.navigationController?.toolbarHidden = false
+        self.hidesBottomBarWhenPushed = false
         
         self.dataSource = self
         self.delegate = self
@@ -63,11 +81,51 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
+        //if(animated == true) {
+            self.titleView?.matchLabel?.text = "New Match"
+        //}
+        
+        //print("Scout View will Appear: \(animated)")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
+        self.titleView?.matchLabel?.text = "New Match"
+        
+        //print("Scout View did Appear: \(animated)")
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillAppear(animated)
+        //self.navigationController?.toolbarHidden = false
+        //print("view will disappear: \(animated)")
+        //self.titleView?.matchLabel?.text = "New Match"
+        //print("Scout View will Disppear: \(animated)")
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        //print("View Did disappear: \(animated)")
+        //titleView?.view.removeFromSuperview()
+        //print("Scout View did Disppear: \(animated)")
+    }
+    
+    // Navigation Actions
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueUnwindToSummary" {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let summary = mainStoryboard.instantiateViewControllerWithIdentifier("MatchSummaryController")
+            self.sourceNavigationController!.pushViewController(summary, animated: false)
+        }
+    }
+    
+    // UISegementedControl Action
     
     func viewChange(control:UISegmentedControl) {
         //if(lastActiveViewIdx == control.selectedSegmentIndex) {return}
@@ -84,6 +142,13 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         if(completed) {
             lastActiveViewIdx = (viewButtons?.selectedSegmentIndex)!
             viewButtons?.selectedSegmentIndex = self.indexOfViewController(self.viewControllers![0])
+        }
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        let currentView = self.viewControllers![0]
+        if (currentView === teamMatchView) {
+            // Check if Match and Team Numbers have been Filled Out -- If not, show UIAlertController (Alert)
         }
     }
     

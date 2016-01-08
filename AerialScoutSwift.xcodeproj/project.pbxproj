@@ -37,6 +37,10 @@
 		C42E99761C31F5CE009A08DC /* MatchSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99751C31F5CE009A08DC /* MatchSummaryViewController.swift */; };
 		C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44985A91C2CE1D80014DD57 /* MatchStore.swift */; };
 		C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF68B1C2E1B3B00125506 /* TitleView.swift */; };
+		C48E55CB1C38B47100174A1D /* ScoutDataViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */; };
+		C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */; };
+		C4C219AB1C3F90C200ACD9DF /* SlideTopRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */; };
+		C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */; };
 		C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */; };
 		C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */; };
 		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
@@ -104,6 +108,10 @@
 		C42E99751C31F5CE009A08DC /* MatchSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSummaryViewController.swift; sourceTree = "<group>"; };
 		C44985A91C2CE1D80014DD57 /* MatchStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStore.swift; sourceTree = "<group>"; };
 		C45BF68B1C2E1B3B00125506 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoutDataViews.storyboard; sourceTree = "<group>"; };
+		C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutDataViewController.swift; sourceTree = "<group>"; };
+		C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTopRightSegue.swift; sourceTree = "<group>"; };
+		C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTopRightUnwindSegue.swift; sourceTree = "<group>"; };
 		C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
 		C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 				C421E86F1C24FE4F009DD98C /* AppDelegate.swift */,
 				C421E8711C24FE4F009DD98C /* ViewController.swift */,
 				C421E8731C24FE4F009DD98C /* Main.storyboard */,
+				C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */,
 				C421E8761C24FE4F009DD98C /* Assets.xcassets */,
 				C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */,
 				C421E87B1C24FE4F009DD98C /* Info.plist */,
@@ -241,6 +250,8 @@
 				C45BF68B1C2E1B3B00125506 /* TitleView.swift */,
 				C42E99511C30C832009A08DC /* FileUpload.swift */,
 				C42E99531C312538009A08DC /* MatchViewCell.swift */,
+				C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */,
+				C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -271,6 +282,7 @@
 				C42E99711C31F522009A08DC /* ScoreViewController.swift */,
 				C42E99731C31F530009A08DC /* FinalViewController.swift */,
 				C42E99751C31F5CE009A08DC /* MatchSummaryViewController.swift */,
+				C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */,
 			);
 			name = ScoutDataViews;
 			sourceTree = "<group>";
@@ -395,6 +407,7 @@
 				C42E99621C31CC51009A08DC /* red1Assist.png in Resources */,
 				C42E995E1C31CC51009A08DC /* orangeFlag.png in Resources */,
 				C42E99601C31CC51009A08DC /* red3Assist.png in Resources */,
+				C48E55CB1C38B47100174A1D /* ScoutDataViews.storyboard in Resources */,
 				C42E995F1C31CC51009A08DC /* black-checkmark.png in Resources */,
 				C42E99641C31CC51009A08DC /* blue2Assist.png in Resources */,
 				C42E99671C31CC64009A08DC /* Aerial About Page.png in Resources */,
@@ -553,6 +566,7 @@
 				C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */,
 				C42E99691C31E849009A08DC /* ScoutContainerViewController.swift in Sources */,
 				C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */,
+				C4C219AB1C3F90C200ACD9DF /* SlideTopRightSegue.swift in Sources */,
 				C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */,
 				C42E99521C30C832009A08DC /* FileUpload.swift in Sources */,
 				C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */,
@@ -561,6 +575,8 @@
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
 				C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */,
 				C42E99721C31F522009A08DC /* ScoreViewController.swift in Sources */,
+				C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */,
+				C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */,
 				C42E99701C31F504009A08DC /* TeleopViewController.swift in Sources */,
 				C44985AA1C2CE1D80014DD57 /* MatchStore.swift in Sources */,
 				C42E99761C31F5CE009A08DC /* MatchSummaryViewController.swift in Sources */,
@@ -754,6 +770,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA9666B2335967D1088F3CB0 /* Pods-AerialScoutSwiftUITests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Don't Code Sign";
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = "iOS Developer";
 				INFOPLIST_FILE = AerialScoutSwiftUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dhanwada.AerialScoutSwiftUITests;
@@ -767,6 +785,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1EACAB5A10FE133C10CBA4F /* Pods-AerialScoutSwiftUITests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Don't Code Sign";
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = "iOS Developer";
 				INFOPLIST_FILE = AerialScoutSwiftUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dhanwada.AerialScoutSwiftUITests;
