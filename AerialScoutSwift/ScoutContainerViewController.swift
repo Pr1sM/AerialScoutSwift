@@ -10,9 +10,9 @@ import UIKit
 
 class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    // Controls for switching child views
-    var viewButtons:UISegmentedControl?
     
+    // MARK: - Variables
+    var viewButtons:UISegmentedControl?
     var sourceNavigationController:UINavigationController? = nil
     
     // Child View References -- (May not be necessary?)
@@ -21,18 +21,25 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     private var scoreView:ScoreViewController?
     private var teleopView:TeleopViewController?
     private var finalView:FinalViewController?
-    private var scoutDataViews:[UIViewController?]? = nil
+    private var scoutDataViews:[ScoutDataViewController?]? = nil
     
     // Reference of the Active Child View Controller and index within array
-    private var activeViewController:UIViewController? = nil
+    private var activeViewController:ScoutDataViewController? = nil
     private var lastActiveViewIdx = 0
     
-    // TitleView
     var titleView:TitleView?
+    var editMatch:Match = Match()
+    var origMatch:Match?
+    
+    
+    
+    // MARK: - Initializers
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,70 +82,98 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         
         self.dataSource = self
         self.delegate = self
-        self.setViewControllers([teamMatchView!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
+        if(self.origMatch == nil) {
+            self.origMatch = Match()
+        }
+        
+        self.editMatch = Match(withCopy: self.origMatch!)
+        
+        // Change this to move to the correct view if match is in progress
+        self.setViewControllers([activeViewController!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: true)
-        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
-        //if(animated == true) {
-            self.titleView?.matchLabel?.text = "New Match"
-        //}
-        
-        //print("Scout View will Appear: \(animated)")
+        self.titleView?.matchLabel?.text = "New Match"
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: true)
-        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
         self.titleView?.matchLabel?.text = "New Match"
-        
-        //print("Scout View did Appear: \(animated)")
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillAppear(animated)
-        //self.navigationController?.toolbarHidden = false
-        //print("view will disappear: \(animated)")
-        //self.titleView?.matchLabel?.text = "New Match"
-        //print("Scout View will Disppear: \(animated)")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        //print("View Did disappear: \(animated)")
-        //titleView?.view.removeFromSuperview()
-        //print("Scout View did Disppear: \(animated)")
     }
     
-    // Navigation Actions
+    // MARK: - Navigation Actions
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "SegueUnwindToSummary" {
+            if ((self.editMatch.isCompleted! & 1) != 1) {
+                self.presentAlertCannotCompleteAction()
+                return false
+            }
+        }
+        
+        if activeViewController === teamMatchView {
+            teamMatchView?.closeTextFields()
+        }
+        return true
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueUnwindToSummary" {
+            if MatchStore.sharedStore.containsMatch(self.origMatch) {
+                MatchStore.sharedStore.replaceMatch(self.origMatch!, withNewMatch: self.editMatch)
+            } else {
+                MatchStore.sharedStore.addMatch(self.editMatch)
+            }
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let summary = mainStoryboard.instantiateViewControllerWithIdentifier("MatchSummaryController")
             self.sourceNavigationController!.pushViewController(summary, animated: false)
         }
     }
     
-    // UISegementedControl Action
+    // MARK: - UISegmentedControl Selector
     
     func viewChange(control:UISegmentedControl) {
-        //if(lastActiveViewIdx == control.selectedSegmentIndex) {return}
+        if self.indexOfViewController(self.viewControllers![0]) == 0 {
+            if ((self.editMatch.isCompleted! & 1) != 1) {
+                control.selectedSegmentIndex = 0
+                self.presentAlertCannotCompleteAction()
+                return
+            }
+        }
         lastActiveViewIdx = self.indexOfViewController(self.viewControllers![0])
         activeViewController = scoutDataViews![control.selectedSegmentIndex]
         let direction = (lastActiveViewIdx < control.selectedSegmentIndex) ? UIPageViewControllerNavigationDirection.Forward : UIPageViewControllerNavigationDirection.Reverse
         self.setViewControllers([activeViewController!], direction: direction, animated: true, completion: nil)
     }
     
-    // UIPageViewControllerDelegate
+    // MARK: - UIPageViewController Methods
+    
+    override func setViewControllers(viewControllers: [UIViewController]?, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)?) {
+        if viewControllers?.count == 1 {
+            if viewControllers![0].isKindOfClass(ScoutDataViewController) {
+                let dataView = viewControllers![0] as! ScoutDataViewController
+                dataView.currentMatch = self.editMatch
+                dataView.container = self
+            }
+        }
+        super.setViewControllers(viewControllers, direction: direction, animated: animated, completion: completion)
+    }
+    
+    // MARK: - UIPageViewControllerDelegate Methods
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        //print("didFinishAnimating: \(finished), PreviousViewController: \(previousViewControllers[0]), Transition Completed: \(completed)")
         if(completed) {
             lastActiveViewIdx = (viewButtons?.selectedSegmentIndex)!
             viewButtons?.selectedSegmentIndex = self.indexOfViewController(self.viewControllers![0])
@@ -146,14 +181,17 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     }
     
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
-        let currentView = self.viewControllers![0]
-        if (currentView === teamMatchView) {
-            // Check if Match and Team Numbers have been Filled Out -- If not, show UIAlertController (Alert)
+        let pendingView = pendingViewControllers[0]
+        if pendingView.isKindOfClass(ScoutDataViewController) {
+            let dataView = pendingView as! ScoutDataViewController
+            dataView.currentMatch = self.editMatch
+            dataView.container = self
         }
     }
     
     
-    // UIPageViewControllerDataSource
+    // MARK: - UIPageViewControllerDataSource Methods
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         if (viewController === autoView) {
             return teamMatchView
@@ -180,11 +218,32 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         return nil
     }
     
-    func indexOfViewController(vc:UIViewController) -> Int {
+    // MARK: - Internal Methods
+    
+    func isComplete() {
+        if editMatch.teamNumber < 1 || editMatch.matchNumber < 1 || editMatch.alliance < 0 {
+            editMatch.isCompleted! = ((self.editMatch.isCompleted! & 1) == 1) ? (self.editMatch.isCompleted! ^ 1) : editMatch.isCompleted!
+            viewButtons?.setTitle("Match", forSegmentAtIndex: 0)
+        } else {
+            editMatch.isCompleted! |= 1
+            viewButtons?.setTitle("MATCH", forSegmentAtIndex: 0)
+        }
+    }
+    
+    // MARK: - Private Methods
+    
+    private func indexOfViewController(vc:UIViewController) -> Int {
         return (vc === teamMatchView) ? 0 :
                (vc === autoView)      ? 1 :
                (vc === scoreView)     ? 2 :
                (vc === teleopView)    ? 3 :
                (vc === finalView)     ? 4 : -1
+    }
+    
+    private func presentAlertCannotCompleteAction() {
+        let alert = UIAlertController(title: "Uh-oh!", message: "In order to complete the action specified, you must complete the required fields first", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        alert.addAction(action)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

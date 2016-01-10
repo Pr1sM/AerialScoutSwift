@@ -31,6 +31,17 @@ class MatchStore : NSObject {
         return newMatch
     }
     
+    func addMatch(newMatch:Match) {
+        allMatches?.append(newMatch)
+    }
+    
+    func containsMatch(match:Match?) -> Bool {
+        if let search:Match = match {
+            return (allMatches?.contains(search))!
+        }
+        return false
+    }
+    
     func csvFilePath() -> String {
         let documentFolder = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
         return documentFolder.stringByAppendingString("Match data - \(UIDevice.currentDevice().name).csv")

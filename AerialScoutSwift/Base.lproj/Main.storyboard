@@ -59,7 +59,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Uq-Mw-hn0">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="2Uq-Mw-hn0">
                                             <rect key="frame" x="528" y="8" width="31" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="31" id="SNo-lq-84a"/>
@@ -80,7 +80,6 @@
                                         <constraint firstItem="v7q-qe-5Ip" firstAttribute="leading" secondItem="4zl-yr-nxM" secondAttribute="trailing" constant="8" id="hoo-6J-NQF"/>
                                         <constraint firstItem="uQZ-N0-0eS" firstAttribute="leading" secondItem="Abs-mV-JGt" secondAttribute="leadingMargin" constant="133" id="nRv-35-pkm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2Uq-Mw-hn0" secondAttribute="trailing" id="ont-es-R4o"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2Uq-Mw-hn0" secondAttribute="trailing" id="qSl-ra-9eg"/>
                                         <constraint firstItem="uQZ-N0-0eS" firstAttribute="height" secondItem="4zl-yr-nxM" secondAttribute="height" id="uFT-tt-1SS"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -167,9 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uwy-8n-BTj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="rjH-RZ-jlJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="uwy-8n-BTj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uib-DZ-ff2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -341,7 +338,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aerial About Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-oa-out">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aerial About Page" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-oa-out">
                                 <rect key="frame" x="140" y="72" width="320" height="456"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ubw-oa-out" secondAttribute="height" multiplier="40:57" id="HEm-DT-H69"/>
@@ -535,8 +532,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aerial About Page.png" width="768" height="1004"/>
-        <image name="black-checkmark.png" width="285" height="297"/>
+        <image name="Aerial About Page" width="768" height="1004"/>
+        <image name="black-checkmark" width="285" height="297"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ScoreViewController: UIViewController {
+class ScoreViewController: ScoutDataViewController {
 
 }

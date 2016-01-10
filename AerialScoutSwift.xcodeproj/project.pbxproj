@@ -19,15 +19,6 @@
 		C421E8901C24FE4F009DD98C /* AerialScoutSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421E88F1C24FE4F009DD98C /* AerialScoutSwiftUITests.swift */; };
 		C42E99521C30C832009A08DC /* FileUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99511C30C832009A08DC /* FileUpload.swift */; };
 		C42E99541C312538009A08DC /* MatchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99531C312538009A08DC /* MatchViewCell.swift */; };
-		C42E995E1C31CC51009A08DC /* orangeFlag.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99561C31CC51009A08DC /* orangeFlag.png */; };
-		C42E995F1C31CC51009A08DC /* black-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99571C31CC51009A08DC /* black-checkmark.png */; };
-		C42E99601C31CC51009A08DC /* red3Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99581C31CC51009A08DC /* red3Assist.png */; };
-		C42E99611C31CC51009A08DC /* red2Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99591C31CC51009A08DC /* red2Assist.png */; };
-		C42E99621C31CC51009A08DC /* red1Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995A1C31CC51009A08DC /* red1Assist.png */; };
-		C42E99631C31CC51009A08DC /* blue3Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995B1C31CC51009A08DC /* blue3Assist.png */; };
-		C42E99641C31CC51009A08DC /* blue2Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995C1C31CC51009A08DC /* blue2Assist.png */; };
-		C42E99651C31CC51009A08DC /* blue1Assist.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E995D1C31CC51009A08DC /* blue1Assist.png */; };
-		C42E99671C31CC64009A08DC /* Aerial About Page.png in Resources */ = {isa = PBXBuildFile; fileRef = C42E99661C31CC64009A08DC /* Aerial About Page.png */; };
 		C42E99691C31E849009A08DC /* ScoutContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E99681C31E849009A08DC /* ScoutContainerViewController.swift */; };
 		C42E996B1C31F47E009A08DC /* TeamMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E996A1C31F47E009A08DC /* TeamMatchViewController.swift */; };
 		C42E996E1C31F4B5009A08DC /* AutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E996D1C31F4B5009A08DC /* AutoViewController.swift */; };
@@ -45,7 +36,7 @@
 		C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */; };
 		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
 		C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */; };
-		C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */; };
+		C4FBDC2B1C40DC70005C5579 /* TextFieldAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */; };
 		E3599186AB697779FF8BC079 /* Pods_AerialScoutSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34119566D3961EA16E10EDF /* Pods_AerialScoutSwiftTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,15 +81,6 @@
 		C421E8911C24FE4F009DD98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C42E99511C30C832009A08DC /* FileUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUpload.swift; sourceTree = "<group>"; };
 		C42E99531C312538009A08DC /* MatchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewCell.swift; sourceTree = "<group>"; };
-		C42E99561C31CC51009A08DC /* orangeFlag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeFlag.png; sourceTree = "<group>"; };
-		C42E99571C31CC51009A08DC /* black-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-checkmark.png"; sourceTree = "<group>"; };
-		C42E99581C31CC51009A08DC /* red3Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red3Assist.png; sourceTree = "<group>"; };
-		C42E99591C31CC51009A08DC /* red2Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red2Assist.png; sourceTree = "<group>"; };
-		C42E995A1C31CC51009A08DC /* red1Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red1Assist.png; sourceTree = "<group>"; };
-		C42E995B1C31CC51009A08DC /* blue3Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue3Assist.png; sourceTree = "<group>"; };
-		C42E995C1C31CC51009A08DC /* blue2Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue2Assist.png; sourceTree = "<group>"; };
-		C42E995D1C31CC51009A08DC /* blue1Assist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue1Assist.png; sourceTree = "<group>"; };
-		C42E99661C31CC64009A08DC /* Aerial About Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aerial About Page.png"; sourceTree = "<group>"; };
 		C42E99681C31E849009A08DC /* ScoutContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutContainerViewController.swift; sourceTree = "<group>"; };
 		C42E996A1C31F47E009A08DC /* TeamMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMatchViewController.swift; sourceTree = "<group>"; };
 		C42E996D1C31F4B5009A08DC /* AutoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +98,7 @@
 		C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchViewController.swift; sourceTree = "<group>"; };
+		C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAccessoryView.swift; sourceTree = "<group>"; };
 		CA9666B2335967D1088F3CB0 /* Pods-AerialScoutSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftUITests/Pods-AerialScoutSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6E7DEF9EE42D908885F3846 /* Pods-AerialScoutSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftTests/Pods-AerialScoutSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,7 +188,6 @@
 		C421E86E1C24FE4F009DD98C /* AerialScoutSwift */ = {
 			isa = PBXGroup;
 			children = (
-				C42E99551C31CBEE009A08DC /* Assets */,
 				C41B13861C29EC8700C1AFE7 /* Match */,
 				C42E996C1C31F48A009A08DC /* ScoutDataViews */,
 				C42E99501C30C7FB009A08DC /* Support */,
@@ -220,7 +201,6 @@
 				C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */,
 				C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */,
 				C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */,
-				C4D80CFE1C263C58008BC4B3 /* NewMatchViewController.swift */,
 				C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */,
 			);
 			path = AerialScoutSwift;
@@ -252,24 +232,9 @@
 				C42E99531C312538009A08DC /* MatchViewCell.swift */,
 				C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */,
 				C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */,
+				C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */,
 			);
 			name = Support;
-			sourceTree = "<group>";
-		};
-		C42E99551C31CBEE009A08DC /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				C42E99661C31CC64009A08DC /* Aerial About Page.png */,
-				C42E99561C31CC51009A08DC /* orangeFlag.png */,
-				C42E99571C31CC51009A08DC /* black-checkmark.png */,
-				C42E99581C31CC51009A08DC /* red3Assist.png */,
-				C42E99591C31CC51009A08DC /* red2Assist.png */,
-				C42E995A1C31CC51009A08DC /* red1Assist.png */,
-				C42E995B1C31CC51009A08DC /* blue3Assist.png */,
-				C42E995C1C31CC51009A08DC /* blue2Assist.png */,
-				C42E995D1C31CC51009A08DC /* blue1Assist.png */,
-			);
-			name = Assets;
 			sourceTree = "<group>";
 		};
 		C42E996C1C31F48A009A08DC /* ScoutDataViews */ = {
@@ -400,18 +365,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C421E87A1C24FE4F009DD98C /* LaunchScreen.storyboard in Resources */,
-				C42E99631C31CC51009A08DC /* blue3Assist.png in Resources */,
-				C42E99611C31CC51009A08DC /* red2Assist.png in Resources */,
 				C421E8771C24FE4F009DD98C /* Assets.xcassets in Resources */,
 				C421E8751C24FE4F009DD98C /* Main.storyboard in Resources */,
-				C42E99621C31CC51009A08DC /* red1Assist.png in Resources */,
-				C42E995E1C31CC51009A08DC /* orangeFlag.png in Resources */,
-				C42E99601C31CC51009A08DC /* red3Assist.png in Resources */,
 				C48E55CB1C38B47100174A1D /* ScoutDataViews.storyboard in Resources */,
-				C42E995F1C31CC51009A08DC /* black-checkmark.png in Resources */,
-				C42E99641C31CC51009A08DC /* blue2Assist.png in Resources */,
-				C42E99671C31CC64009A08DC /* Aerial About Page.png in Resources */,
-				C42E99651C31CC51009A08DC /* blue1Assist.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +522,7 @@
 				C421E8721C24FE4F009DD98C /* ViewController.swift in Sources */,
 				C42E99691C31E849009A08DC /* ScoutContainerViewController.swift in Sources */,
 				C41B13881C29ECA800C1AFE7 /* Match.swift in Sources */,
+				C4FBDC2B1C40DC70005C5579 /* TextFieldAccessoryView.swift in Sources */,
 				C4C219AB1C3F90C200ACD9DF /* SlideTopRightSegue.swift in Sources */,
 				C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */,
 				C42E99521C30C832009A08DC /* FileUpload.swift in Sources */,
@@ -573,7 +530,6 @@
 				C42E996B1C31F47E009A08DC /* TeamMatchViewController.swift in Sources */,
 				C42E996E1C31F4B5009A08DC /* AutoViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
-				C4D80CFF1C263C58008BC4B3 /* NewMatchViewController.swift in Sources */,
 				C42E99721C31F522009A08DC /* ScoreViewController.swift in Sources */,
 				C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */,
 				C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */,

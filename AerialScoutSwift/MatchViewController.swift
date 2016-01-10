@@ -24,13 +24,10 @@ class MatchViewController : UITableViewController {
         titleView = storyboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
-        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
-        //self.navigationItem.title = "Scouting List"
         self.navigationItem.titleView = UIView(frame: CGRectZero)
         titleView?.view.center.x = (self.navigationController?.navigationBar.center.x)!
         self.navigationController?.toolbar.barTintColor = UIColor.orangeColor()
         self.hidesBottomBarWhenPushed = false
-        //print(titleView?.view.center)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,34 +35,22 @@ class MatchViewController : UITableViewController {
         self.navigationController?.setToolbarHidden(false, animated: true)
         self.changeToolbars(self.editing, animated: animated)
         self.navigationController?.navigationBar.addSubview((titleView?.view)!)
-        //print("Match View Will Appear: \(animated)")
-        //if(animated == false) {
-            self.titleView?.matchLabel?.text = (self.editing) ? "Edit List" : "Scouting List"
-        //}
-        
-        //print("Match View will Appear: \(animated)")
+        self.titleView?.matchLabel?.text = (self.editing) ? "Edit List" : "Scouting List"
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
         self.titleView?.matchLabel?.text = (self.editing) ? "Edit List" : "Scouting List"
-        
-        //print("Match View did Appear: \(animated)")
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        //self.navigationController?.setToolbarHidden(true, animated: true)
         titleView?.view.removeFromSuperview()
-        //print("Match View will disappear: \(animated)")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        //titleView?.view.removeFromSuperview()
-        //print("Match View did disappear: \(animated)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,9 +66,7 @@ class MatchViewController : UITableViewController {
     
     func changeToolbars(editing: Bool, animated: Bool) {
         self.setToolbarItems((editing ? editToolbar?.items : mainToolbar?.items), animated: animated)
-        //if(animated == false) {
-            self.titleView?.matchLabel?.text = (editing) ? "Edit List" : "Scouting List"
-        //}
+        self.titleView?.matchLabel?.text = (editing) ? "Edit List" : "Scouting List"
     }
     
     // Table View Delegate and Data Source
@@ -97,7 +80,25 @@ class MatchViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (MatchStore.sharedStore.allMatches?.count)!
+        let count = (MatchStore.sharedStore.allMatches?.count)!
+        return count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("MatchViewCell") as! MatchViewCell
+        
+        let match = MatchStore.sharedStore.allMatches?[indexPath.row]
+        
+        cell.accessoryType = .DisclosureIndicator
+        
+        let matchNumber:Int = match!.matchNumber!
+        let teamNumber:Int = match!.teamNumber!
+        
+        cell.matchNumberLabel?.text = "\(matchNumber)"
+        cell.teamNumberLabel?.text = "\(teamNumber)"
+        cell.checkmarkImage?.hidden = (match?.isCompleted! != 31)
+        
+        return cell
     }
     
     // Segue Logic
@@ -111,6 +112,7 @@ class MatchViewController : UITableViewController {
     }
     
     // Unwind Segue
+    
     @IBAction func unwindToSummary(sender:UIStoryboardSegue) {
         
     }

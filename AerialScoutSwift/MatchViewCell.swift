@@ -12,6 +12,4 @@ class MatchViewCell: UITableViewCell {
     @IBOutlet var matchNumberLabel:UILabel?
     @IBOutlet var teamNumberLabel:UILabel?
     @IBOutlet var checkmarkImage:UIImageView?
-    
-    
 }

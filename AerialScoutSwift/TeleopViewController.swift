@@ -8,6 +8,6 @@
 
 import UIKit
 
-class TeleopViewController: UIViewController {
+class TeleopViewController: ScoutDataViewController {
 
 }

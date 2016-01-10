@@ -8,6 +8,6 @@
 
 import UIKit
 
-class FinalViewController: UIViewController {
+class FinalViewController: ScoutDataViewController {
 
 }
