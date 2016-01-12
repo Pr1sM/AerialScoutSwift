@@ -30,6 +30,7 @@
 		C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF68B1C2E1B3B00125506 /* TitleView.swift */; };
 		C48E55CB1C38B47100174A1D /* ScoutDataViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */; };
 		C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */; };
+		C4A37A341C455C760018B63A /* ReselectableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A37A331C455C760018B63A /* ReselectableSegmentedControl.swift */; };
 		C4C219AB1C3F90C200ACD9DF /* SlideTopRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */; };
 		C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */; };
 		C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */; };
@@ -92,6 +93,7 @@
 		C45BF68B1C2E1B3B00125506 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoutDataViews.storyboard; sourceTree = "<group>"; };
 		C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutDataViewController.swift; sourceTree = "<group>"; };
+		C4A37A331C455C760018B63A /* ReselectableSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReselectableSegmentedControl.swift; sourceTree = "<group>"; };
 		C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTopRightSegue.swift; sourceTree = "<group>"; };
 		C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTopRightUnwindSegue.swift; sourceTree = "<group>"; };
 		C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */,
 				C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */,
 				C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */,
+				C4A37A331C455C760018B63A /* ReselectableSegmentedControl.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				C42E996B1C31F47E009A08DC /* TeamMatchViewController.swift in Sources */,
 				C42E996E1C31F4B5009A08DC /* AutoViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
+				C4A37A341C455C760018B63A /* ReselectableSegmentedControl.swift in Sources */,
 				C42E99721C31F522009A08DC /* ScoreViewController.swift in Sources */,
 				C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */,
 				C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */,
