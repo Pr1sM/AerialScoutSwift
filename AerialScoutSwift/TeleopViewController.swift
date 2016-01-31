@@ -27,6 +27,10 @@ class TeleopViewController: ScoutDataViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setupSegments()
+        if (currentMatch.isCompleted & 8) == 0 {
+            currentMatch.isCompleted |= 8
+            isComplete()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -88,15 +92,11 @@ class TeleopViewController: ScoutDataViewController {
     
     // MARK: - Private Methods
     
-    func setupSegments() {
-        drivingQuality.selectedSegmentIndex = (self.currentMatch.teleDriveQuality! >= 1) ? (self.currentMatch.teleDriveQuality! - 1) : UISegmentedControlNoSegment
-        travelSpeed.selectedSegmentIndex = (self.currentMatch.teleTravelSpeed! >= 1) ? (self.currentMatch.teleTravelSpeed! - 1) : UISegmentedControlNoSegment
-        defenseAbility.selectedSegmentIndex = (self.currentMatch.teleDefenseAbility! >= 1) ? (self.currentMatch.teleDefenseAbility! - 1) : UISegmentedControlNoSegment
-        pickupSpeed.selectedSegmentIndex = (self.currentMatch.telePickupSpeed! >= 1) ? (self.currentMatch.telePickupSpeed! - 1) : UISegmentedControlNoSegment
-        inboundingSpeed.selectedSegmentIndex = (self.currentMatch.teleInboundSpeed! >= 1) ? (self.currentMatch.teleInboundSpeed! - 1) : UISegmentedControlNoSegment
+    private func setupSegments() {
+        drivingQuality.selectedSegmentIndex = (self.currentMatch.teleDriveQuality >= 1) ? (self.currentMatch.teleDriveQuality - 1) : UISegmentedControlNoSegment
+        travelSpeed.selectedSegmentIndex = (self.currentMatch.teleTravelSpeed >= 1) ? (self.currentMatch.teleTravelSpeed - 1) : UISegmentedControlNoSegment
+        defenseAbility.selectedSegmentIndex = (self.currentMatch.teleDefenseAbility >= 1) ? (self.currentMatch.teleDefenseAbility - 1) : UISegmentedControlNoSegment
+        pickupSpeed.selectedSegmentIndex = (self.currentMatch.telePickupSpeed >= 1) ? (self.currentMatch.telePickupSpeed - 1) : UISegmentedControlNoSegment
+        inboundingSpeed.selectedSegmentIndex = (self.currentMatch.teleInboundSpeed >= 1) ? (self.currentMatch.teleInboundSpeed - 1) : UISegmentedControlNoSegment
     }
-    
-    // MARK: - Internal Methods
-    
-    
 }

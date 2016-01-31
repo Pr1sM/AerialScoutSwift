@@ -1,10 +1,13 @@
 PODS:
+  - MultiSelectSegmentedControl (1.0)
   - ReachabilitySwift (2.3.3)
 
 DEPENDENCIES:
+  - MultiSelectSegmentedControl (~> 1.0)
   - ReachabilitySwift (~> 2.3)
 
 SPEC CHECKSUMS:
+  MultiSelectSegmentedControl: 61389b88420074fc972e61ee9ef3d8bb4c286071
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
 
 COCOAPODS: 0.39.0

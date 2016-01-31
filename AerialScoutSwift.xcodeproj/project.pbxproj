@@ -30,6 +30,8 @@
 		C45BF68C1C2E1B3B00125506 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF68B1C2E1B3B00125506 /* TitleView.swift */; };
 		C48E55CB1C38B47100174A1D /* ScoutDataViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */; };
 		C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */; };
+		C49905151C4B5A110048FF9B /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49905141C4B5A110048FF9B /* Support.storyboard */; };
+		C49905171C4B5BFF0048FF9B /* LabeledStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49905161C4B5BFF0048FF9B /* LabeledStepper.swift */; };
 		C4A37A341C455C760018B63A /* ReselectableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A37A331C455C760018B63A /* ReselectableSegmentedControl.swift */; };
 		C4C219AB1C3F90C200ACD9DF /* SlideTopRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */; };
 		C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */; };
@@ -37,6 +39,7 @@
 		C4D80CF91C262BAA008BC4B3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */; };
 		C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */; };
 		C4D80CFD1C263AAB008BC4B3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */; };
+		C4F888A51C5CD7AF00602A33 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F888A41C5CD7AF00602A33 /* Definitions.swift */; };
 		C4FBDC2B1C40DC70005C5579 /* TextFieldAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */; };
 		E3599186AB697779FF8BC079 /* Pods_AerialScoutSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34119566D3961EA16E10EDF /* Pods_AerialScoutSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,13 +96,17 @@
 		C45BF68B1C2E1B3B00125506 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoutDataViews.storyboard; sourceTree = "<group>"; };
 		C48E55CC1C3C781E00174A1D /* ScoutDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutDataViewController.swift; sourceTree = "<group>"; };
+		C49905141C4B5A110048FF9B /* Support.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
+		C49905161C4B5BFF0048FF9B /* LabeledStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledStepper.swift; sourceTree = "<group>"; };
 		C4A37A331C455C760018B63A /* ReselectableSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReselectableSegmentedControl.swift; sourceTree = "<group>"; };
+		C4B6A5BE1C46E9730021CF69 /* AerialScout-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AerialScout-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4C219AA1C3F90C200ACD9DF /* SlideTopRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTopRightSegue.swift; sourceTree = "<group>"; };
 		C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTopRightUnwindSegue.swift; sourceTree = "<group>"; };
 		C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
 		C4D80CF81C262BAA008BC4B3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		C4F888A41C5CD7AF00602A33 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAccessoryView.swift; sourceTree = "<group>"; };
 		CA9666B2335967D1088F3CB0 /* Pods-AerialScoutSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftUITests/Pods-AerialScoutSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6E7DEF9EE42D908885F3846 /* Pods-AerialScoutSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerialScoutSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AerialScoutSwiftTests/Pods-AerialScoutSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +204,7 @@
 				C421E8711C24FE4F009DD98C /* ViewController.swift */,
 				C421E8731C24FE4F009DD98C /* Main.storyboard */,
 				C48E55CA1C38B47100174A1D /* ScoutDataViews.storyboard */,
+				C49905141C4B5A110048FF9B /* Support.storyboard */,
 				C421E8761C24FE4F009DD98C /* Assets.xcassets */,
 				C421E8781C24FE4F009DD98C /* LaunchScreen.storyboard */,
 				C421E87B1C24FE4F009DD98C /* Info.plist */,
@@ -204,6 +212,7 @@
 				C4D80CFA1C26365C008BC4B3 /* AboutViewController.swift */,
 				C4D80CFC1C263AAB008BC4B3 /* ScheduleViewController.swift */,
 				C4D4DEE11C27B24300AC64C3 /* FileUploadViewController.swift */,
+				C4B6A5BE1C46E9730021CF69 /* AerialScout-Bridging-Header.h */,
 			);
 			path = AerialScoutSwift;
 			sourceTree = "<group>";
@@ -236,6 +245,8 @@
 				C4C219AC1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift */,
 				C4FBDC2A1C40DC70005C5579 /* TextFieldAccessoryView.swift */,
 				C4A37A331C455C760018B63A /* ReselectableSegmentedControl.swift */,
+				C49905161C4B5BFF0048FF9B /* LabeledStepper.swift */,
+				C4F888A41C5CD7AF00602A33 /* Definitions.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -368,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C421E87A1C24FE4F009DD98C /* LaunchScreen.storyboard in Resources */,
+				C49905151C4B5A110048FF9B /* Support.storyboard in Resources */,
 				C421E8771C24FE4F009DD98C /* Assets.xcassets in Resources */,
 				C421E8751C24FE4F009DD98C /* Main.storyboard in Resources */,
 				C48E55CB1C38B47100174A1D /* ScoutDataViews.storyboard in Resources */,
@@ -529,12 +541,14 @@
 				C4C219AB1C3F90C200ACD9DF /* SlideTopRightSegue.swift in Sources */,
 				C4D80CFB1C26365C008BC4B3 /* AboutViewController.swift in Sources */,
 				C42E99521C30C832009A08DC /* FileUpload.swift in Sources */,
+				C49905171C4B5BFF0048FF9B /* LabeledStepper.swift in Sources */,
 				C4D4DEE21C27B24300AC64C3 /* FileUploadViewController.swift in Sources */,
 				C42E996B1C31F47E009A08DC /* TeamMatchViewController.swift in Sources */,
 				C42E996E1C31F4B5009A08DC /* AutoViewController.swift in Sources */,
 				C421E8701C24FE4F009DD98C /* AppDelegate.swift in Sources */,
 				C4A37A341C455C760018B63A /* ReselectableSegmentedControl.swift in Sources */,
 				C42E99721C31F522009A08DC /* ScoreViewController.swift in Sources */,
+				C4F888A51C5CD7AF00602A33 /* Definitions.swift in Sources */,
 				C48E55CD1C3C781E00174A1D /* ScoutDataViewController.swift in Sources */,
 				C4C219AD1C3F90E300ACD9DF /* SlideTopRightUnwindSegue.swift in Sources */,
 				C42E99701C31F504009A08DC /* TeleopViewController.swift in Sources */,
@@ -680,11 +694,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 264040EB64F0B1FE442581A9 /* Pods-AerialScoutSwift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AerialScoutSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dhanwada.AerialScoutSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AerialScoutSwift/AerialScout-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -692,11 +708,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC298E349A83BB0349B9B83D /* Pods-AerialScoutSwift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AerialScoutSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dhanwada.AerialScoutSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AerialScoutSwift/AerialScout-Bridging-Header.h";
 			};
 			name = Release;
 		};

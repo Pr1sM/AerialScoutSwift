@@ -15,7 +15,7 @@ class ScheduleViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Support", bundle: nil)
         titleView = storyboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 0, width: 150, height: 33)

@@ -20,7 +20,7 @@ class MatchViewController : UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         self.navigationController?.navigationBarHidden = false
         self.setToolbarItems(mainToolbar?.items, animated: true)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Support", bundle: nil)
         titleView = storyboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
@@ -91,12 +91,12 @@ class MatchViewController : UITableViewController {
         
         cell.accessoryType = .DisclosureIndicator
         
-        let matchNumber:Int = match!.matchNumber!
-        let teamNumber:Int = match!.teamNumber!
+        let matchNumber:Int = match!.matchNumber
+        let teamNumber:Int = match!.teamNumber
         
         cell.matchNumberLabel?.text = "\(matchNumber)"
         cell.teamNumberLabel?.text = "\(teamNumber)"
-        cell.checkmarkImage?.hidden = (match?.isCompleted! != 31)
+        cell.checkmarkImage?.hidden = (match?.isCompleted != 31)
         
         return cell
     }

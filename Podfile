@@ -5,13 +5,16 @@ use_frameworks!
 
 target 'AerialScoutSwift' do
   pod 'ReachabilitySwift', '~> 2.3'
+  pod 'MultiSelectSegmentedControl', '~> 1.0'
 end
 
 target 'AerialScoutSwiftTests' do
   pod 'ReachabilitySwift', '~> 2.3'
+  pod 'MultiSelectSegmentedControl', '~> 1.0'
 end
 
 target 'AerialScoutSwiftUITests' do
   pod 'ReachabilitySwift', '~> 2.3'
+  pod 'MultiSelectSegmentedControl', '~> 1.0'
 end
 

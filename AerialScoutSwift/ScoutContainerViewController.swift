@@ -56,20 +56,11 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         self.navigationController?.toolbar.barTintColor = UIColor.orangeColor()
         
         // Setup child view controllers
-        let storyboard = UIStoryboard(name: "ScoutDataViews", bundle: nil)
-        teamMatchView = storyboard.instantiateViewControllerWithIdentifier("TeamMatchViewController") as? TeamMatchViewController
-        autoView = storyboard.instantiateViewControllerWithIdentifier("AutoViewController") as? AutoViewController
-        scoreView = storyboard.instantiateViewControllerWithIdentifier("ScoreViewController") as? ScoreViewController
-        teleopView = storyboard.instantiateViewControllerWithIdentifier("TeleopViewController") as? TeleopViewController
-        finalView = storyboard.instantiateViewControllerWithIdentifier("FinalViewController") as? FinalViewController
-        scoutDataViews = [(teamMatchView)!, (autoView)!, (scoreView)!, (teleopView)!, (finalView)!]
-        
-        // Setup first child view -- Will change to make dynamic
-        activeViewController = teamMatchView
-        viewButtons?.selectedSegmentIndex = 0
+        //setupSubViewControllers()
         
         // Setup Title View
-        titleView = self.storyboard!.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
+        let supportStoryboard = UIStoryboard(name: "Support", bundle: nil)
+        titleView = supportStoryboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
         self.navigationController?.navigationBar.addSubview((titleView?.view)!)
@@ -88,15 +79,13 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         }
         
         self.editMatch = Match(withCopy: self.origMatch!)
-        
-        // Change this to move to the correct view if match is in progress
-        self.setViewControllers([activeViewController!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: true)
         self.titleView?.matchLabel?.text = "New Match"
+        self.setupSubViewControllers()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -113,11 +102,28 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
         super.viewDidDisappear(animated)
     }
     
+    private func setupSubViewControllers() {
+        let storyboard = UIStoryboard(name: "ScoutDataViews", bundle: nil)
+        teamMatchView = storyboard.instantiateViewControllerWithIdentifier("TeamMatchViewController") as? TeamMatchViewController
+        autoView = storyboard.instantiateViewControllerWithIdentifier("AutoViewController") as? AutoViewController
+        scoreView = storyboard.instantiateViewControllerWithIdentifier("ScoreViewController") as? ScoreViewController
+        teleopView = storyboard.instantiateViewControllerWithIdentifier("TeleopViewController") as? TeleopViewController
+        finalView = storyboard.instantiateViewControllerWithIdentifier("FinalViewController") as? FinalViewController
+        scoutDataViews = [(teamMatchView)!, (autoView)!, (scoreView)!, (teleopView)!, (finalView)!]
+        
+        // Setup first child view -- Will change to make dynamic
+        activeViewController = teamMatchView
+        viewButtons?.selectedSegmentIndex = 0
+        
+        // Change this to move to the correct view if match is in progress
+        self.setViewControllers([activeViewController!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+    }
+    
     // MARK: - Navigation Actions
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "SegueUnwindToSummary" {
-            if ((self.editMatch.isCompleted! & 1) != 1) {
+            if ((self.editMatch.isCompleted & 1) != 1) {
                 self.presentAlertCannotCompleteAction()
                 return false
             }
@@ -146,7 +152,7 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     
     func viewChange(control:UISegmentedControl) {
         if self.indexOfViewController(self.viewControllers![0]) == 0 {
-            if ((self.editMatch.isCompleted! & 1) != 1) {
+            if ((self.editMatch.isCompleted & 1) != 1) {
                 control.selectedSegmentIndex = 0
                 self.presentAlertCannotCompleteAction()
                 return
@@ -221,12 +227,34 @@ class ScoutContainerViewController: UIPageViewController, UIPageViewControllerDa
     // MARK: - Internal Methods
     
     func isComplete() {
-        if editMatch.teamNumber < 1 || editMatch.matchNumber < 1 || editMatch.alliance < 0 {
-            editMatch.isCompleted! = ((self.editMatch.isCompleted! & 1) == 1) ? (self.editMatch.isCompleted! ^ 1) : editMatch.isCompleted!
-            viewButtons?.setTitle("Match", forSegmentAtIndex: 0)
-        } else {
-            editMatch.isCompleted! |= 1
+        if(editMatch.isCompleted & 1) == 1 {
             viewButtons?.setTitle("MATCH", forSegmentAtIndex: 0)
+        } else {
+            viewButtons?.setTitle("Match", forSegmentAtIndex: 0)
+        }
+        
+        if(editMatch.isCompleted & 2) == 2 {
+            viewButtons?.setTitle("AUTO", forSegmentAtIndex: 1)
+        } else {
+            viewButtons?.setTitle("Auto", forSegmentAtIndex: 1)
+        }
+        
+        if(editMatch.isCompleted & 4) == 4 {
+            viewButtons?.setTitle("SCORE", forSegmentAtIndex: 2)
+        } else {
+            viewButtons?.setTitle("Score", forSegmentAtIndex: 2)
+        }
+        
+        if(editMatch.isCompleted & 8) == 8 {
+            viewButtons?.setTitle("TELEOP", forSegmentAtIndex: 3)
+        } else {
+            viewButtons?.setTitle("Teleop", forSegmentAtIndex: 3)
+        }
+        
+        if(editMatch.isCompleted & 16) == 16 {
+            viewButtons?.setTitle("FINAL", forSegmentAtIndex: 4)
+        } else {
+            viewButtons?.setTitle("Final", forSegmentAtIndex: 4)
         }
     }
     

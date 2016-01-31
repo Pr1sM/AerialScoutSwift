@@ -17,10 +17,10 @@ class MatchSummaryViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        titleView = self.storyboard!.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
+        let storyboard = UIStoryboard(name: "Support", bundle: nil)
+        titleView = storyboard.instantiateViewControllerWithIdentifier("TitleView") as? TitleView
         titleView?.matchLabel?.text = ""
         titleView?.view.frame = CGRect(x: 0, y: 5.5, width: 150, height: 33)
-        //self.navigationController?.navigationBar.addSubview((titleView?.view)!)
         self.navigationItem.title = ""
         self.navigationItem.titleView = UIView(frame: CGRectZero)
         titleView?.view.center.x = (self.navigationController?.navigationBar.center.x)!

@@ -12,64 +12,113 @@ class Match : NSObject, NSCoding {
     
     static var maxCycleCount = 0
     
-    var teamNumber  : Int?
-    var matchNumber : Int?
-    var isCompleted : Int?
-    var hasViewed   : Int?
-    var alliance    : Int?
+    var teamNumber  : Int
+    var matchNumber : Int
+    var isCompleted : Int
+    var hasViewed   : Int
+    var alliance    : Int
     
     // Auto
     
-    var autoStart   : Int?
-    var autoMoved   : Int?
-    var autoHotHigh : Int?
-    var autoHotLow  : Int?
-    var autoHigh    : Int?
-    var autoLow     : Int?
-    var autoMissed  : Int?
+    var autoStart   : Int
+    var autoMoved   : Int
+    var autoHotHigh : Int
+    var autoHotLow  : Int
+    var autoHigh    : Int
+    var autoLow     : Int
+    var autoMissed  : Int
     
     // Teleop - Scoring
     
-    var scoreHigh        : Int?
-    var scoreLow         : Int?
-    var scoreTrussPass   : Int?
-    var scoreTrussCatch  : Int?
-    var scoreCycles      : Int?
-    var scoreAssists     : Int?
-    var scoreTeamAssist1 : Int?
-    var scoreTeamAssist2 : Int?
-    var scoreTeamAssist3 : Int?
-    var scoreDrops       : Int?
-    var scoreMissedHigh  : Int?
-    var scoreMissedTruss : Int?
+    var scoreHigh        : Int
+    var scoreLow         : Int
+    var scoreTrussPass   : Int
+    var scoreTrussCatch  : Int
+    var scoreCycles      : Int
+    var scoreAssists     : Int
+    var scoreTeamAssist1 : Int
+    var scoreTeamAssist2 : Int
+    var scoreTeamAssist3 : Int
+    var scoreDrops       : Int
+    var scoreMissedHigh  : Int
+    var scoreMissedTruss : Int
     
     // Cycle Data
-    var cycles : [Int]?
+    var cycles : [Int]
     
     // Teleop - Qualitative
     
-    var teleDefenseAbility : Int?
-    var teleDriveRole      : Int?
-    var teleDriveQuality   : Int?
-    var teleTravelSpeed    : Int?
-    var telePickupSpeed    : Int?
-    var teleInboundSpeed   : Int?
+    var teleDefenseAbility : Int
+    var teleDriveRole      : Int
+    var teleDriveQuality   : Int
+    var teleTravelSpeed    : Int
+    var telePickupSpeed    : Int
+    var teleInboundSpeed   : Int
     
     // Final
     
-    var finalScore : Int?
-    var finalPenaltyScore : Int?
-    var finalResult : Int?
-    var finalPenalty : Int?
-    var finalRobot : Int?
+    var finalScore : Int
+    var finalPenaltyScore : Int
+    var finalResult : Int
+    var finalPenalty : Int
+    var finalRobot : Int
     
     override init() {
+        self.teamNumber  = -1
+        self.matchNumber = -1
+        self.isCompleted = 0
+        self.hasViewed   = 0
+        self.alliance    = -1
+        
+        // Auto
+        
+        self.autoStart   = -1
+        self.autoMoved   = -1
+        self.autoHotHigh = 0
+        self.autoHotLow  = 0
+        self.autoHigh    = 0
+        self.autoLow     = 0
+        self.autoMissed  = 0
+        
+        // Teleop - Scoring
+        
+        self.scoreCycles      = 0
+        self.scoreHigh        = 0
+        self.scoreLow         = 0
+        self.scoreTrussCatch  = 0
+        self.scoreTrussPass   = 0
+        self.scoreAssists     = 0
+        self.scoreTeamAssist1 = 0
+        self.scoreTeamAssist2 = 0
+        self.scoreTeamAssist3 = 0
+        self.scoreDrops       = 0
+        self.scoreMissedHigh  = 0
+        self.scoreMissedTruss = 0
+        
+        // Teleop - Cycle Data
+        
+        self.cycles = [Int]()
+        
+        // Teleop - Qualitative
+        
+        self.teleDefenseAbility = 0
+        self.teleDriveQuality   = 0
+        self.teleDriveRole      = 0
+        self.teleInboundSpeed   = 0
+        self.telePickupSpeed    = 0
+        self.teleTravelSpeed    = 0
+        
+        // Final
+        
+        self.finalScore        = -1
+        self.finalPenaltyScore = -1
+        self.finalResult       = -1
+        self.finalPenalty      = 0
+        self.finalRobot        = 0
         super.init()
-        self.setToDefaults()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init()
         self.teamNumber  = aDecoder.decodeIntegerForKey("Match.teamNumber")
         self.matchNumber = aDecoder.decodeIntegerForKey("Match.matchNumber")
         self.isCompleted = aDecoder.decodeIntegerForKey("Match.isCompleted")
@@ -123,10 +172,10 @@ class Match : NSObject, NSCoding {
         self.finalResult       = aDecoder.decodeIntegerForKey("Match.finalResult")
         self.finalPenalty      = aDecoder.decodeIntegerForKey("Match.finalPenalty")
         self.finalRobot        = aDecoder.decodeIntegerForKey("Match.finalRobot")
+        super.init()
     }
     
     init(withCopy copy:Match) {
-        super.init()
         self.teamNumber            = copy.teamNumber;
         self.matchNumber           = copy.matchNumber;
         self.isCompleted           = copy.isCompleted;
@@ -178,114 +227,61 @@ class Match : NSObject, NSCoding {
         self.finalResult           = copy.finalResult
         self.finalPenalty          = copy.finalPenalty
         self.finalRobot            = copy.finalRobot
+        super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeInteger(teamNumber!,  forKey: "Match.teamNumber")
-        aCoder.encodeInteger(matchNumber!, forKey: "Match.matchNumber")
-        aCoder.encodeInteger(isCompleted!, forKey: "Match.isCompleted")
-        aCoder.encodeInteger(hasViewed!,   forKey: "Match.hasViewed")
-        aCoder.encodeInteger(alliance!,    forKey: "Match.alliance")
+        aCoder.encodeInteger(teamNumber,  forKey: "Match.teamNumber")
+        aCoder.encodeInteger(matchNumber, forKey: "Match.matchNumber")
+        aCoder.encodeInteger(isCompleted, forKey: "Match.isCompleted")
+        aCoder.encodeInteger(hasViewed,   forKey: "Match.hasViewed")
+        aCoder.encodeInteger(alliance,    forKey: "Match.alliance")
         
         // Auto
         
-        aCoder.encodeInteger(autoStart!,   forKey: "Match.autoStart")
-        aCoder.encodeInteger(autoMoved!,   forKey: "Match.autoMoved")
-        aCoder.encodeInteger(autoHotHigh!, forKey: "Match.autoHotHigh")
-        aCoder.encodeInteger(autoHotLow!,  forKey: "Match.autoHotLow")
-        aCoder.encodeInteger(autoHigh!,    forKey: "Match.autoHigh")
-        aCoder.encodeInteger(autoLow!,     forKey: "Match.autoLow")
-        aCoder.encodeInteger(autoMissed!,  forKey: "Match.autoMissed")
+        aCoder.encodeInteger(autoStart,   forKey: "Match.autoStart")
+        aCoder.encodeInteger(autoMoved,   forKey: "Match.autoMoved")
+        aCoder.encodeInteger(autoHotHigh, forKey: "Match.autoHotHigh")
+        aCoder.encodeInteger(autoHotLow,  forKey: "Match.autoHotLow")
+        aCoder.encodeInteger(autoHigh,    forKey: "Match.autoHigh")
+        aCoder.encodeInteger(autoLow,     forKey: "Match.autoLow")
+        aCoder.encodeInteger(autoMissed,  forKey: "Match.autoMissed")
         
         // Teleop - Scoring
         
-        aCoder.encodeInteger(scoreCycles!,      forKey: "Match.scoreCycles")
-        aCoder.encodeInteger(scoreHigh!,        forKey: "Match.scoreHigh")
-        aCoder.encodeInteger(scoreLow!,         forKey: "Match.scoreLow")
-        aCoder.encodeInteger(scoreTrussCatch!,  forKey: "Match.scoreTrussCatch")
-        aCoder.encodeInteger(scoreTrussPass!,   forKey: "Match.scoreTrussPass")
-        aCoder.encodeInteger(scoreAssists!,     forKey: "Match.scoreAssists")
-        aCoder.encodeInteger(scoreTeamAssist1!, forKey: "Match.scoreTeamAssist1")
-        aCoder.encodeInteger(scoreTeamAssist2!, forKey: "Match.scoreTeamAssist2")
-        aCoder.encodeInteger(scoreTeamAssist3!, forKey: "Match.scoreTeamAssist3")
-        aCoder.encodeInteger(scoreDrops!,       forKey: "Match.scoreDrops")
-        aCoder.encodeInteger(scoreMissedHigh!,  forKey: "Match.scoreMissedHigh")
-        aCoder.encodeInteger(scoreMissedTruss!, forKey: "Match.scoreMissedTruss")
+        aCoder.encodeInteger(scoreCycles,      forKey: "Match.scoreCycles")
+        aCoder.encodeInteger(scoreHigh,        forKey: "Match.scoreHigh")
+        aCoder.encodeInteger(scoreLow,         forKey: "Match.scoreLow")
+        aCoder.encodeInteger(scoreTrussCatch,  forKey: "Match.scoreTrussCatch")
+        aCoder.encodeInteger(scoreTrussPass,   forKey: "Match.scoreTrussPass")
+        aCoder.encodeInteger(scoreAssists,     forKey: "Match.scoreAssists")
+        aCoder.encodeInteger(scoreTeamAssist1, forKey: "Match.scoreTeamAssist1")
+        aCoder.encodeInteger(scoreTeamAssist2, forKey: "Match.scoreTeamAssist2")
+        aCoder.encodeInteger(scoreTeamAssist3, forKey: "Match.scoreTeamAssist3")
+        aCoder.encodeInteger(scoreDrops,       forKey: "Match.scoreDrops")
+        aCoder.encodeInteger(scoreMissedHigh,  forKey: "Match.scoreMissedHigh")
+        aCoder.encodeInteger(scoreMissedTruss, forKey: "Match.scoreMissedTruss")
         
         // Teleop - Cycle Data
         
-        aCoder.encodeBytes(UnsafePointer(cycles!), length: cycles!.count * sizeof(Int), forKey: "Match.cycles")
+        aCoder.encodeBytes(UnsafePointer(cycles), length: cycles.count * sizeof(Int), forKey: "Match.cycles")
         
         // Teleop - Qualitative
         
-        aCoder.encodeInteger(teleDefenseAbility!, forKey: "Match.teleDefenseAbility")
-        aCoder.encodeInteger(teleDriveQuality!,   forKey: "Match.teleDriveQuality")
-        aCoder.encodeInteger(teleDriveRole!,      forKey: "Match.teleDriveRole")
-        aCoder.encodeInteger(teleInboundSpeed!,   forKey: "Match.teleInboundSpeed")
-        aCoder.encodeInteger(telePickupSpeed!,    forKey: "Match.telePickupSpeed")
-        aCoder.encodeInteger(teleTravelSpeed!,    forKey: "Match.teleTravelSpeed")
+        aCoder.encodeInteger(teleDefenseAbility, forKey: "Match.teleDefenseAbility")
+        aCoder.encodeInteger(teleDriveQuality,   forKey: "Match.teleDriveQuality")
+        aCoder.encodeInteger(teleDriveRole,      forKey: "Match.teleDriveRole")
+        aCoder.encodeInteger(teleInboundSpeed,   forKey: "Match.teleInboundSpeed")
+        aCoder.encodeInteger(telePickupSpeed,    forKey: "Match.telePickupSpeed")
+        aCoder.encodeInteger(teleTravelSpeed,    forKey: "Match.teleTravelSpeed")
         
         // Final
         
-        aCoder.encodeInteger(finalScore!,        forKey: "Match.finalScore")
-        aCoder.encodeInteger(finalPenaltyScore!, forKey: "Match.finalPenaltyScore")
-        aCoder.encodeInteger(finalResult!,       forKey: "Match.finalResult")
-        aCoder.encodeInteger(finalPenalty!,      forKey: "Match.finalPenalty")
-        aCoder.encodeInteger(finalRobot!,        forKey: "Match.finalRobot")
-    }
-    
-    private func setToDefaults() {
-        self.teamNumber  = 0
-        self.matchNumber = 0
-        self.isCompleted = 0
-        self.hasViewed   = 0
-        self.alliance    = -1
-        
-        // Auto
-        
-        self.autoStart   = -1
-        self.autoMoved   = -1
-        self.autoHotHigh = -1
-        self.autoHotLow  = -1
-        self.autoHigh    = -1
-        self.autoLow     = -1
-        self.autoMissed  = -1
-        
-        // Teleop - Scoring
-        
-        self.scoreCycles      = 0
-        self.scoreHigh        = 0
-        self.scoreLow         = 0
-        self.scoreTrussCatch  = 0
-        self.scoreTrussPass   = 0
-        self.scoreAssists     = 0
-        self.scoreTeamAssist1 = 0
-        self.scoreTeamAssist2 = 0
-        self.scoreTeamAssist3 = 0
-        self.scoreDrops       = 0
-        self.scoreMissedHigh  = 0
-        self.scoreMissedTruss = 0
-        
-        // Teleop - Cycle Data
-        
-        self.cycles = [Int]()
-        
-        // Teleop - Qualitative
-        
-        self.teleDefenseAbility = 0
-        self.teleDriveQuality   = 0
-        self.teleDriveRole      = 0
-        self.teleInboundSpeed   = 0
-        self.telePickupSpeed    = 0
-        self.teleTravelSpeed    = 0
-        
-        // Final
-        
-        self.finalScore        = -1
-        self.finalPenaltyScore = -1
-        self.finalResult       = -1
-        self.finalPenalty      = 0
-        self.finalRobot        = 0
+        aCoder.encodeInteger(finalScore,        forKey: "Match.finalScore")
+        aCoder.encodeInteger(finalPenaltyScore, forKey: "Match.finalPenaltyScore")
+        aCoder.encodeInteger(finalResult,       forKey: "Match.finalResult")
+        aCoder.encodeInteger(finalPenalty,      forKey: "Match.finalPenalty")
+        aCoder.encodeInteger(finalRobot,        forKey: "Match.finalRobot")
     }
     
     static func writeHeader() -> String {
@@ -316,8 +312,8 @@ class Match : NSObject, NSCoding {
                            "\(self.finalResult), "      + "\(self.finalPenalty), "       +
                            "\(self.finalRobot)"
         var cycles:String = ""
-        for var i = 0; i < self.cycles?.count; ++i {
-            cycles += ", \(self.cycles?[i])"
+        for var i = 0; i < self.cycles.count; ++i {
+            cycles += ", \(self.cycles[i])"
         }
         return match + cycles + "    \r\n"
     }

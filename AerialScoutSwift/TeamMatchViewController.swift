@@ -12,10 +12,12 @@ class TeamMatchViewController: ScoutDataViewController, UITextFieldDelegate {
     
     // MARK: - IB Variables
     
-    @IBOutlet weak var teamNumberField:TextFieldAccessoryView?
-    @IBOutlet weak var matchNumberField:TextFieldAccessoryView?
-    @IBOutlet weak var noShowButton:UIButton?
-    @IBOutlet weak var alliance:UISegmentedControl?
+    @IBOutlet weak var teamNumberField:TextFieldAccessoryView!
+    @IBOutlet weak var matchNumberField:TextFieldAccessoryView!
+    @IBOutlet weak var noShowButton:UIButton!
+    @IBOutlet weak var alliance:UISegmentedControl!
+    
+    var activeField:UITextField?
     
     private var disableView = UIView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
     
@@ -69,6 +71,9 @@ class TeamMatchViewController: ScoutDataViewController, UITextFieldDelegate {
     @IBAction func allianceDidChange(sender:AnyObject) {
         let seg = sender as! UISegmentedControl
         currentMatch.alliance = seg.selectedSegmentIndex
+        if let field:UITextField = activeField {
+            field.resignFirstResponder()
+        }
         self.isComplete()
     }
     
@@ -80,7 +85,7 @@ class TeamMatchViewController: ScoutDataViewController, UITextFieldDelegate {
         let velocity = sender.velocityInView(sender.view)
         if fabs(velocity.y) < fabs(velocity.x) {
             if velocity.x < 0 {
-                if ((self.currentMatch.isCompleted! & 1) != 1) {
+                if ((self.currentMatch.isCompleted & 1) != 1) {
                     self.presentAlertCannotCompleteAction()
                     return
                 }
@@ -104,9 +109,15 @@ class TeamMatchViewController: ScoutDataViewController, UITextFieldDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    private func isComplete() {
-        container?.isComplete()
-        disableView.userInteractionEnabled = ((self.currentMatch.isCompleted! & 1) != 1)
+    override func isComplete() {
+        if currentMatch.teamNumber >= 1 && currentMatch.matchNumber >= 1 && currentMatch.alliance >= 0 {
+            currentMatch.isCompleted |= 1;
+        } else if (currentMatch.isCompleted & 1) == 1 {
+            currentMatch.isCompleted ^= 1;
+        }
+        let viewComplete:Bool = (self.currentMatch.isCompleted & 1) != 0
+        disableView.userInteractionEnabled = !viewComplete
+        super.isComplete()
     }
     
     // MARK: - UITextFieldDelegate Methods
@@ -119,20 +130,25 @@ class TeamMatchViewController: ScoutDataViewController, UITextFieldDelegate {
         container?.navigationItem.rightBarButtonItem?.enabled = false
         container?.navigationItem.leftBarButtonItem?.enabled = false
         noShowButton?.enabled = false
+        activeField = textField
         
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         if let match:Match = currentMatch {
             if textField === teamNumberField {
-                match.teamNumber = Int((teamNumberField?.text)!)
+                if(teamNumberField.text?.characters.count > 0) {
+                    match.teamNumber = Int((teamNumberField?.text)!) ?? match.teamNumber
+                }
             } else if textField === matchNumberField {
-                match.matchNumber = Int((matchNumberField?.text)!)
+                if(matchNumberField.text?.characters.count > 0) {
+                    match.matchNumber = Int((matchNumberField?.text)!) ?? match.matchNumber
+                }
             }
             
             if (currentMatch.matchNumber > 0 && currentMatch.teamNumber > 0) {
                 // Update Title View to include match and team number
-                container?.titleView?.matchLabel?.text = "Match \(match.matchNumber!) : \(match.teamNumber!)"
+                container?.titleView?.matchLabel?.text = "Match \(match.matchNumber) : \(match.teamNumber)"
             } else {
                 // Update title view to show "New Match"
                 container?.titleView?.matchLabel?.text = "New Match"
@@ -141,6 +157,7 @@ class TeamMatchViewController: ScoutDataViewController, UITextFieldDelegate {
             container?.navigationItem.rightBarButtonItem?.enabled = true
             container?.navigationItem.leftBarButtonItem?.enabled = true
         }
+        activeField = nil
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

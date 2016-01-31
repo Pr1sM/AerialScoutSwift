@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-AerialScoutSwiftUITests/MultiSelectSegmentedControl.framework"
   install_framework "Pods-AerialScoutSwiftUITests/ReachabilitySwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-AerialScoutSwiftUITests/MultiSelectSegmentedControl.framework"
   install_framework "Pods-AerialScoutSwiftUITests/ReachabilitySwift.framework"
 fi

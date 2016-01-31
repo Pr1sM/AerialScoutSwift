@@ -23,6 +23,10 @@ class ScoutDataViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    func isComplete() {
+        container?.isComplete()
+    }
+    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
